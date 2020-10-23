@@ -21,13 +21,15 @@ GRSCDEVELOPERSCLUB
 2) TASK      ==>
   
 
-  *)  Complete basic Resources and Login/Reg.. Dashboard till 1st Jan 2021.
 
-  *)  Learn Basics of DB, JS --> Till 27th Nov
+          *)  Complete basic Resources and Login/Reg.. Dashboard till 1st Jan 2021.
 
-  *)   from 1st Jan to 15th April === > learn CP
+          *)  Learn Basics of DB, JS --> Till 27th Nov
 
-  *)   After that CP + Development work.
+          *)   from 1st Jan to 15th April === > learn CP
+
+          *)   After that CP + Development work.
+
 
 
 3) TO-DO    ==>
