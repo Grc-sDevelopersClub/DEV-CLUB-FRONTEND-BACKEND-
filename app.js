@@ -76,7 +76,7 @@ app.get("/register",(req,res) =>{
 });
 
 app.post("/register",(req,res)=>{
-
+  User.register({user});
 });
 
 app.get("/donation",(req,res) =>{

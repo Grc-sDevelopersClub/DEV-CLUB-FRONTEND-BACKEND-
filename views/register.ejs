@@ -12,7 +12,7 @@
             <h5  class="register-login-heading"  >Register</h5>
           </div>
           <div class="card-body">
-            <form action="">
+            <form action="/register" method="POST">
               <!-- <div class="panel-body">
 
                   </div> -->
@@ -31,6 +31,7 @@
 
                 <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
               </div>
+              
               <div class="form-group">
                 <input type="email" class="form-control input-form" id="email-input" aria-describedby="emailHelp" placeholder="Email">
               </div>
@@ -41,7 +42,7 @@
               <div class="form-group">
                 <input type="password" class="form-control input-form" id="password-input" placeholder="Confirm Password">
               </div>
-              <button class="btn btn-primary btn-lg btn-block active">Login</button>
+              <button class="btn btn-primary btn-lg btn-block active" type="submit">Login</button>
               <p class="not-member input-form">Already a member ? <a href="login.html">Sign In</a> </p>
             </form>
 
