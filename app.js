@@ -1,3 +1,5 @@
+
+require('dotenv').config()
 const express= require ("express");
 const bodyParser= require ("body-parser");
 const Razorpay =require("razorpay");
@@ -37,8 +39,8 @@ app.get("/donation",(req,res) =>{
 // Donation Page
 
 let instance = new Razorpay({
-    key_id: 'rzp_test_BAMVOtMO48tP5w', // your `KEY_ID`
-    key_secret: 'q3ygsL3SscpF8AxcvfUaXV1B' // your `KEY_SECRET`
+    key_id:process.env.RAZORPAY_ID, // your `KEY_ID`
+    key_secret: process.env.RAZORPAY_SECRET // your `KEY_SECRET`
   })
   
   app.use(bodyParser.json());
@@ -59,7 +61,7 @@ let instance = new Razorpay({
   app.post("/api/payment/verify",(req,res)=>{
   body=req.body.razorpay_order_id + "|" + req.body.razorpay_payment_id;
   var crypto = require("crypto");
-  var expectedSignature = crypto.createHmac('grc_sr', 'q3ygsL3SscpF8AxcvfUaXV1B')
+  var expectedSignature = crypto.createHmac('grc_sr',process.env.RAZORPAY_SECRET )
                                   .update(body.toString())
                                   .digest('hex');
                                   console.log("sig"+req.body.razorpay_signature);
