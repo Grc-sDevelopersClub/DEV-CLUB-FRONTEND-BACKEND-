@@ -39,6 +39,8 @@ mongoose.set("useCreateIndex", true);
 const userSchema = new mongoose.Schema({
   email: String,
   password: String,
+  googleId:String,
+  facebookId:String
   
 });
 
@@ -47,8 +49,7 @@ const userDetails= new mongoose.Schema({
   lastName: String,
   contact:String,
   email: String,
-  googleId:String,
-  facebookId:String
+  
 });
 
 
@@ -81,7 +82,7 @@ passport.use(
       userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo",
     },
     function (accessToken, refreshToken, profile, cb) {
-      Details.findOrCreate({ googleId: profile.id }, function (err, user) {
+      User.findOrCreate({ googleId: profile.id }, function (err, user) {
         return cb(err, user);
       });
     }
@@ -98,7 +99,7 @@ passport.use(
       callbackURL: "http://localhost:3000/auth/facebook/secrets",
     },
     function (accessToken, refreshToken, profile, cb) {
-      Details.findOrCreate({ facebookId: profile.id }, function (err, user) {
+      User.findOrCreate({ facebookId: profile.id }, function (err, user) {
         return cb(err, user);
       });
     }

@@ -29,6 +29,9 @@ body {
 
 }
 
+.socialAccountSignup {
+    background-color: transparent;
+}
    
 @media (max-width:992px) {
    
