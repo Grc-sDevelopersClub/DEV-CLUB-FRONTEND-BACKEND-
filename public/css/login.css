@@ -1,63 +1,66 @@
-
 body {
-    background: linear-gradient(0.375turn, #041C82, #00122B, #440784);
+  background: linear-gradient(0.375turn, #041C82, #00122B, #440784);
 }
-
 
 .login-content {
-    text-align: left;
+  text-align: left;
 }
+
 .white-section {
-    text-align: left;
-    padding: 0;
+  text-align: left;
+  padding: 0;
 }
+
 .login-card {
-    width: 100%;
+  width: 100%;
 }
+
 .not-member {
-    padding-top: 10px;
-    font-size: 0.8rem;
+  padding-top: 10px;
+  font-size: 0.8rem;
 }
 
 #login-footer .colored-section {
-   /* margin-top: 30px; */
-   background: transparent;
+  /* margin-top: 30px; */
+  background: transparent;
 }
-.register-login-heading {
-    text-align: center;
-    color: #00122B;
 
+.register-login-heading {
+  text-align: center;
+  color: #00122B;
 }
 
 .socialAccountSignup {
-    background-color: transparent;
+  background-color: transparent;
 }
-   
+
 @media (max-width:992px) {
-   
-    .login-content {
-        text-align: center;
-        
-    }
-    .login-card {
-        width: 70%;
-        margin: 3% auto;
-        
-    }
-    .login-card h5 {
-        font-size: 150%;  
-    }
-    .container-fluid {
-      padding: 0;
-    }
-    .input-form {
-        font-size: 80%;
-    }
-    .email-share {
-        font-size: 2rem;
-    }
-    .btn {
-      font-size: 150%;
-    }
-  
+  .login-content {
+    text-align: center;
   }
+
+  .login-card {
+    width: 70%;
+    margin: 3% auto;
+  }
+
+  .login-card h5 {
+    font-size: 150%;
+  }
+
+  .container-fluid {
+    padding: 0;
+  }
+
+  .input-form {
+    font-size: 80%;
+  }
+
+  .email-share {
+    font-size: 2rem;
+  }
+
+  .btn {
+    font-size: 150%;
+  }
+}

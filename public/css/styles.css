@@ -1,7 +1,6 @@
 body {
   font-family: "Montserrat";
   font-weight: 400;
-
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -15,6 +14,7 @@ h1, h2, h3, h4, h5, h6 {
   /* text-align: left; */
   padding: 3% 12% 7%;
 }
+
 /* .navbar-fixed {
   top: 0;
   left: auto;
@@ -24,13 +24,11 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   padding-bottom: 0;
   background-color: #060930;
-  
+
 } */
 .navbar {
   padding: 0 0 4.5rem;
   background-color: transparent;
-  
- 
 }
 
 .navbar-brand {
@@ -49,7 +47,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .white-section {
- 
   text-align: center;
   color: black;
 }
@@ -82,8 +79,9 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 8rem;
   padding: 0;
 }
-.language-item :hover{
- color: blueviolet;
+
+.language-item :hover {
+  color: blueviolet;
 }
 
 /* We Learn */
@@ -105,6 +103,7 @@ h1, h2, h3, h4, h5, h6 {
 #ourroles {
   padding: 0;
 }
+
 .ourroles-image {
   width: 100%;
 }
@@ -116,13 +115,11 @@ h1, h2, h3, h4, h5, h6 {
 .ourrole-item-right {
   text-align: right;
   padding: 6% 0;
-
 }
 
 .ourrole-item-left {
   text-align: left;
   padding: 6% 0;
-
 }
 
 .carousel-item {
@@ -132,7 +129,6 @@ h1, h2, h3, h4, h5, h6 {
 /* #ourteam {
 
 } */
-
 #ourteam-carousel img {
   width: 50%;
 }
@@ -144,10 +140,7 @@ h1, h2, h3, h4, h5, h6 {
 #showdata {
   height: 60%;
   width: 100%;
-  
 }
-
-
 
 .ourteam-container {
   /* background: linear-gradient(0.125turn,#00D7F4, #fff); */
@@ -174,6 +167,7 @@ hr {
   body {
     font-size: 150%;
   }
+
   .title-heading {
     text-align: center;
   }
@@ -182,39 +176,42 @@ hr {
     padding-top: 80px;
     width: 70%;
   }
+
   .big-heading {
     font-size: 4.5rem;
   }
+
   .secondbig-heading {
     font-size: 4rem;
   }
+
   h3 {
     font-size: 2.5rem;
-
   }
+
   .navbar-toggler-icon {
     width: 5em;
     height: 5em;
   }
+
   .navbar-brand {
     font-size: 5rem;
   }
- .navbar-nav {
-   font-size: 3rem;
-   text-align: left;
- }
 
+  .navbar-nav {
+    font-size: 3rem;
+    text-align: left;
+  }
 
   .language-item {
     font-size: 12rem;
     padding: 0;
   }
-  
-
 
   .welearn-section {
     text-align: center;
   }
+
   .container-fluid {
     /* text-align: left; */
     padding: 3% 5% 7%;
@@ -224,25 +221,28 @@ hr {
     width: 70%;
     padding-top: 50px;
   }
+
   .secondbig-heading {
     text-align: center;
   }
+
   .ourroles-image {
     width: 100%;
     margin-top: 30%;
     height: 50%;
   }
+
   .colored-section {
     font-size: 150%;
   }
+
   .white-section {
     font-size: 150%;
   }
+
   .btn {
     font-size: 150%;
   }
-
 }
-
 
 /* Login  */

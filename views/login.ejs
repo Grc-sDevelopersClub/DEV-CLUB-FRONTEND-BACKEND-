@@ -1,56 +1,52 @@
-
-
 <%- include("header") -%>
 
-      <div class="row">
-        
-        <div class="col-sm-6 ">
-            <div class="socialAccountSignup card social-block ">
-              <div class="card-body">
-                <a class="btn btn-block btn-social btn-google" href="/auth/google" role="button">
-                  <i class="fab fa-google"></i>
-                  Sign Up with Google
-                </a>
-              </div>
-            </div>
-            <div class="card social-block">
-              <div class="card-body">
-                <a class="btn btn-block btn-social btn-facebook" href="/auth/facebook" role="button">
-                  <i class="fab fa-facebook"></i>
-                  Sign Up with Facebook
-                </a>
-              </div>
-            </div>  
-          </div>
-      
-        <div class="col-lg-6">
-          <section class="white-section">
-            <div class="card login-card">
-              <div class="card-header">
-                <h5 class="register-login-heading">Sign In</h5>
-              </div>
-              <div class="card-body ">
-                <form action="/login" method="POST">
-                  <div class="form-group">
-                    <!-- <label for="email-input">Email address</label> -->
-                    <input type="email" name="username" class="form-control input-form" id="email-input" aria-describedby="emailHelp" placeholder="Email Address">
-                    <small id="emailHelp" class="form-text text-muted email-share">We'll never share your email with anyone else.</small>
-                  </div>
-                  <div class="form-group">
-                    <!-- <label for="password-input">Password</label> -->
-                    <input type="password" name="password" class="form-control input-form" id="password-input" placeholder="Password">
+<div class="row">
 
-                  </div>
-                  <button type="submit" class="btn btn-primary btn-lg btn-block active">Login</button>
-                  <p class="not-member input-form">Not a member ? <a href="/register">Create Account</a> </p>
-                </form>
+  <div class="col-lg-8 title-heading">
+    <h1 class="big-heading">We Develope your Imaginations.</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse mi metus, auctor eu bibendum et, varius vel elit. Integer at vehicula massa. Vivamus cursus tortor sed tellus luctus laoreet. Integer sit amet tortor fringilla, mattis
+      lectus a, dictum lacus. Morbi fringilla libero a elit vestibulum venenatis. Aenean vitae lacinia nunc, non vehicula odio.</p>
+  </div>
 
-              </div>
-          </section>
+  <div class="col-lg-4">
+    <section class="white-section">
+      <div class="card login-card">
+        <div class="card-header">
+          <h5 class="register-login-heading">Sign In</h5>
         </div>
-      </div>
-    </div>
- 
-  </section>
+        <div class="card-body ">
+          <form action="/login" method="POST">
+            <div class="form-group">
+              <!-- <label for="email-input">Email address</label> -->
+              <input type="email" name="username" class="form-control input-form" id="email-input" aria-describedby="emailHelp" placeholder="Email Address">
+              <small id="emailHelp" class="form-text text-muted email-share">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+              <!-- <label for="password-input">Password</label> -->
+              <input type="password" name="password" class="form-control input-form" id="password-input" placeholder="Password">
 
-  <%- include("footer") -%>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg btn-block active">Login</button>
+            <p class="not-member input-form">Not a member ? <a href="/register">Create Account</a> </p>
+          </form>
+          <p>Or</p>
+          <a class="btn btn-block btn-social btn-google" href="/auth/google" role="button">
+            <i class="fab fa-google"></i>
+            Sign Up with Google
+          </a>
+          <a class="btn btn-block btn-social btn-facebook" href="/auth/facebook" role="button">
+            <i class="fab fa-facebook"></i>
+            Sign Up with Facebook
+          </a>
+
+
+        </div>
+    </section>
+
+  </div>
+</div>
+</div>
+
+</section>
+
+<%- include("footer") -%>
