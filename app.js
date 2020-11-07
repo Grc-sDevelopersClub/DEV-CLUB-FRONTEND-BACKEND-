@@ -9,7 +9,15 @@ const passport = require("passport");
 const passportLocalMongoose = require("passport-local-mongoose");
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const FacebookStrategy = require("passport-facebook");
-var findOrCreate = require("mongoose-findorcreate");
+const findOrCreate = require("mongoose-findorcreate");
+var path = require("path");
+const multer = require("multer");
+
+
+
+
+
+
 
 const app = express();
 
@@ -53,6 +61,16 @@ const userDetails = new mongoose.Schema({
   email: String,
 
 });
+const fileSchema = new mongoose.Schema({
+  department: String,
+  yearOfStudy: String,
+  semester: Number,
+  subject: String,
+  unit: String,
+  destination: [String]
+});
+
+
 
 
 
@@ -62,6 +80,9 @@ userSchema.plugin(findOrCreate);
 
 const User = new mongoose.model("User", userSchema);
 const Details = new mongoose.model("Detail", userDetails);
+const File= new mongoose.model("File",fileSchema);
+
+
 
 passport.use(User.createStrategy());
 
@@ -110,6 +131,38 @@ passport.use(
   )
 );
 
+const store = (req,res,next)=>{
+  let uploadedFile = new File({
+    department:req.body.department,
+    yearOfStudy: req.body.yearOfStudy,
+    sem: req.body.sem,
+    subject: req.body.subject,
+    unit: req.body.unit,
+    
+  })
+  let filePath=[];
+  if(req.files){
+    filePath=[];
+      req.files.forEach((file,index,array)=>{
+        
+         filePath.push(path +file.path +","); 
+      })
+      uploadedFile.destination = filePath
+      
+  }
+  uploadedFile.save()
+  .then(response =>{
+      res.json({
+          message:"File Added Sucessfully"
+      })
+  })
+  .catch(err =>{
+      res.json({
+          message:"An error occured"
+      })
+  })
+};
+
 app.get("/", (req, res) => {
   res.render("index");
 });
@@ -126,37 +179,11 @@ app.get("/online-compiler", (req, res) => {
 
 });
 
-app.post("/online-compiler", (req, res) => {
-  editorLang = req.body.Lang;
-  res.render("online-compiler", {
-    language: editorLang
-  });
-});
-
 app.get("/register", (req, res) => {
   res.render("register");
 });
 
-app.get("/login", (req, res) => {
-  res.render("login");
-});
 
-app.post("/login", (req, res) => {
-  const user = new User({
-    username: req.body.username,
-    password: req.body.password,
-  });
-  req.login(user, (err) => {
-    if (err) {
-      console.log(err);
-    } else {
-      passport.authenticate("local")(req, res, () => {
-        res.redirect("/online-compiler");
-      });
-
-    }
-  });
-});
 
 
 app.post("/register", (req, res) => {
@@ -173,7 +200,7 @@ app.post("/register", (req, res) => {
         res.redirect("/register");
       } else {
         passport.authenticate("local")(req, res, () => {
-          res.redirect("/online-compiler");
+          res.redirect("/profile");
         });
       }
     },
@@ -194,6 +221,39 @@ app.post("/register", (req, res) => {
   });
 });
 
+app.get("/login", (req, res) => {
+  res.render("login");
+});
+
+app.post("/login", (req, res) => {
+  
+  const user = new User({
+    username: req.body.username,
+    password: req.body.password,
+  });
+  req.login(user, (err) => {
+    if (err) {
+      console.log(err);
+    } else {
+      passport.authenticate("local")(req, res, () => {
+        
+          res.redirect("/profile");
+      
+      });
+
+    }
+  });
+});
+
+app.post("/online-compiler", (req, res) => {
+  editorLang = req.body.Lang;
+  res.render("online-compiler", {
+    language: editorLang
+  });
+});
+
+
+
 app.get(
   "/auth/google",
   passport.authenticate("google", {
@@ -208,7 +268,7 @@ app.get(
   }),
   function(req, res) {
     // Successful authentication, redirect home.
-    res.redirect("/online-compiler");
+    res.redirect("/profile");
   }
 );
 
@@ -221,9 +281,65 @@ app.get(
   }),
   function(req, res) {
     // Successful authentication, redirect home.
-    res.redirect("/online-compiler");
+    res.redirect("/profile");
   }
 );
+app.get("/profile", (req, res) => {
+  
+  
+  if (req.isAuthenticated()) {
+    Details.findOne({email:req.user.username},(err,user)=>{
+      if(!err){
+        const fullName=user.firstName+" "+ user.lastName;
+        const email=user.email;
+        res.render("profile",{name:fullName,mail:email});
+      }
+    });
+  } else {
+    res.redirect("/login");
+  }
+
+  
+});
+
+app.post("/profile",(req,res)=>{
+  console.log(req);
+});
+
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'uploads/')
+  },
+  filename: function (req, file, cb) {
+      let ext = path.extname(file.originalname)
+    cb(null,Date.now() + ext)
+  }
+});
+
+const upload = multer ({
+  storage: storage,
+  fileFilter: (req,file,callback)=>{
+      if(file.mimetype="application/pdf"){
+          callback(null,true);
+      }else{
+          console.log("Only PDF formats are allowed");
+          callback(null,false);
+      }
+  },
+  limits: {
+      fileSize: 10485760 
+  }
+})
+
+
+app.post("/store", upload.array("destination[]") , store);
+
+app.post("/profile",(req,res)=>{
+  console.log(req);
+});
+
+
+
 
 app.get("/donation", (req, res) => {
   res.render("donation");
@@ -231,35 +347,35 @@ app.get("/donation", (req, res) => {
 
 // <---------------- Donation Page ------------------>
 
-let instance = new Razorpay({
-    key_id:process.env.RAZORPAY_ID, // your `KEY_ID`
-    key_secret: process.env.RAZORPAY_SECRET // your `KEY_SECRET`
-  })
+// let instance = new Razorpay({
+//     key_id:process.env.RAZORPAY_ID, // your `KEY_ID`
+//     key_secret: process.env.RAZORPAY_SECRET // your `KEY_SECRET`
+//   })
 
-  app.use(bodyParser.json());
+//   app.use(bodyParser.json());
 
-  app.post("/api/payment/order",(req,res)=>{
-  params=req.body;
-  instance.orders.create(params).then((data) => {
-         res.send({"sub":data,"status":"success"});
-  }).catch((error) => {
-         res.send({"sub":error,"status":"failed"});
-  })
-  });
+//   app.post("/api/payment/order",(req,res)=>{
+//   params=req.body;
+//   instance.orders.create(params).then((data) => {
+//          res.send({"sub":data,"status":"success"});
+//   }).catch((error) => {
+//          res.send({"sub":error,"status":"failed"});
+//   })
+//   });
 
-  app.post("/api/payment/verify",(req,res)=>{
-  body=req.body.razorpay_order_id + "|" + req.body.razorpay_payment_id;
-  var crypto = require("crypto");
-  var expectedSignature = crypto.createHmac('grc_sr',process.env.RAZORPAY_SECRET )
-                                  .update(body.toString())
-                                  .digest('hex');
-                                  console.log("sig"+req.body.razorpay_signature);
-                                  console.log("sig"+expectedSignature);
-  var response = {"status":"failure"}
-  if(expectedSignature === req.body.razorpay_signature)
-   response={"status":"success"}
-      res.send(response);
-  });
+//   app.post("/api/payment/verify",(req,res)=>{
+//   body=req.body.razorpay_order_id + "|" + req.body.razorpay_payment_id;
+//   var crypto = require("crypto");
+//   var expectedSignature = crypto.createHmac('grc_sr',process.env.RAZORPAY_SECRET )
+//                                   .update(body.toString())
+//                                   .digest('hex');
+//                                   console.log("sig"+req.body.razorpay_signature);
+//                                   console.log("sig"+expectedSignature);
+//   var response = {"status":"failure"}
+//   if(expectedSignature === req.body.razorpay_signature)
+//    response={"status":"success"}
+//       res.send(response);
+//   });
 
 // <---------------- Donation Page ------------------>
 
