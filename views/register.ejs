@@ -14,44 +14,12 @@
           <h5 class="register-login-heading">Register</h5>
         </div>
         <div class="card-body">
-          <form action="/register" method="POST">
-            <!-- <div class="panel-body">
-
-                      </div> -->
-            <div class="form-group">
-              <div class="row">
-                <div class="col-lg-6 form-group">
-                  <!-- <label for="email-input">First Name</label> -->
-                  <input type="text" name="firstName" id="first-name" class="form-control input-sm input-form" placeholder="First Name">
-                </div>
-                <div class="col-lg-6 form-group">
-                  <!-- <label for="email-input">Last Name</label> -->
-                  <input type="text" name="lastName" id="last-name" class="form-control input-sm input-form" placeholder="Last Name">
-                </div>
-              </div>
-              <!-- <label for="email-input">Email address</label> -->
-
-              <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
-            </div>
-
-            <div class="form-group">
-              <input type="email" name="username" class="form-control input-form" id="email-input" aria-describedby="emailHelp" placeholder="Email">
-            </div>
-            <div class="form-group">
-              <input type="password" name="password" class="form-control input-form" id="password-input" placeholder="Password">
-
-            </div>
-            <!-- <div class="form-group">
-                    <input type="password" class="form-control input-form" id="password-input" placeholder="Confirm Password">
-                  </div> -->
-            <button class="btn btn-primary btn-lg btn-block active" type="submit">Register</button>
-            <p class="not-member input-form">Already a member ? <a href="/login">Sign In</a> </p>
-          </form>
-          <p>Or</p>
+          <p class="not-member input-form">Already a member ? <a href="/login">Log In</a> </p>
           <a class="btn btn-block btn-social btn-google" href="/auth/google" role="button">
             <i class="fab fa-google"></i>
             Sign Up with Google
           </a>
+         
           <a class="btn btn-block btn-social btn-facebook" href="/auth/facebook" role="button">
             <i class="fab fa-facebook"></i>
             Sign Up with Facebook
@@ -70,3 +38,4 @@
 </div>
 
 <%- include("footer") -%>
+

@@ -279,10 +279,10 @@ hr {
   background-clip: border-box;
   border: 0 solid rgba(0,0,0,.125);
   border-radius: .25rem;
-  border-top-left-radius: 8%;
-  border-top-right-radius: 8%;
-  border-bottom-left-radius: 8%;
-  border-bottom-right-radius: 8%;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
 }
 .drop-down-button{
   margin: 15% auto;
@@ -331,4 +331,26 @@ h3 {
 }
 .mb-0 {
   color: black;
+}
+
+/* Upload-form */
+
+.upload-form {
+  background-color: white;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  
+}
+.upload-form-row{
+  margin: 4%;
+}
+
+.custom-file-label{
+ text-align: left; 
+}
+
+.selector-item {
+  text-align: left;
 }

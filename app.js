@@ -1,8 +1,6 @@
 require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
-const Razorpay = require("razorpay");
-const ejs = require("ejs");
 const mongoose = require("mongoose");
 const session = require("express-session");
 const passport = require("passport");
@@ -13,10 +11,7 @@ const findOrCreate = require("mongoose-findorcreate");
 var path = require("path");
 const multer = require("multer");
 
-
-
-
-
+const fs=require("fs");
 
 
 const app = express();
@@ -46,55 +41,46 @@ mongoose.connect("mongodb://localhost:27017/devclubDB", {
 });
 mongoose.set("useCreateIndex", true);
 
-const userSchema = new mongoose.Schema({
-  email: String,
-  password: String,
-  googleId: String,
-  facebookId: String
-
-});
 
 const userDetails = new mongoose.Schema({
-  firstName: String,
-  lastName: String,
-  contact: String,
-  email: String,
+  name: String,
+  password:String,
+  facebookId:String,
+  googleId:String,
+  imageUrl:{
+    type:String},
+  username:String
 
 });
 const fileSchema = new mongoose.Schema({
+  fileName:String,
   department: String,
   yearOfStudy: String,
-  semester: Number,
+  semester: String,
   subject: String,
-  unit: String,
+  unit: Number,
   destination: [String]
 });
 
+userDetails.plugin(passportLocalMongoose);
+userDetails.plugin(findOrCreate);
 
 
-
-
-
-userSchema.plugin(passportLocalMongoose);
-userSchema.plugin(findOrCreate);
-
-const User = new mongoose.model("User", userSchema);
 const Details = new mongoose.model("Detail", userDetails);
 const File= new mongoose.model("File",fileSchema);
 
 
-
-passport.use(User.createStrategy());
 
 passport.serializeUser(function(user, done) {
   done(null, user.id);
 });
 
 passport.deserializeUser(function(id, done) {
-  User.findById(id, function(err, user) {
+  Details.findById(id, function(err, user) {
     done(err, user);
   });
 });
+
 
 passport.use(
   new GoogleStrategy({
@@ -104,8 +90,12 @@ passport.use(
       userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo",
     },
     function(accessToken, refreshToken, profile, cb) {
-      User.findOrCreate({
-        googleId: profile.id
+     
+      Details.findOrCreate({googleId: profile.id},{  
+        username:profile.emails[0].value,
+        googleId: profile.id,
+        name:profile.displayName,
+        imageUrl:profile.photos[0].value   
       }, function(err, user) {
         return cb(err, user);
       });
@@ -120,16 +110,24 @@ passport.use(
       clientID: process.env.FACEBOOK_APP_ID,
       clientSecret: process.env.FACEBOOK_APP_SECRET,
       callbackURL: "http://localhost:3000/auth/facebook/secrets",
+      profileFields: ['id', 'displayName', 'photos', 'email']
     },
     function(accessToken, refreshToken, profile, cb) {
-      User.findOrCreate({
-        facebookId: profile.id
+      Details.findOrCreate({facebookId: profile.id},{
+        username:profile.emails[0].value,
+        facebookId: profile.id,
+        name:profile.displayName,
+        imageUrl:`https://graph.facebook.com/${profile.id}/picture?access_token=${accessToken}` 
+
       }, function(err, user) {
         return cb(err, user);
       });
     }
   )
 );
+
+
+
 
 const store = (req,res,next)=>{
   let uploadedFile = new File({
@@ -152,14 +150,12 @@ const store = (req,res,next)=>{
   }
   uploadedFile.save()
   .then(response =>{
-      res.json({
-          message:"File Added Sucessfully"
-      })
+      console.log("File Added Sucessfully");
+      res.redirect("/store");
   })
   .catch(err =>{
-      res.json({
-          message:"An error occured"
-      })
+      console.log( "An error occured");
+    
   })
 };
 
@@ -184,66 +180,26 @@ app.get("/register", (req, res) => {
 });
 
 
-
-
 app.post("/register", (req, res) => {
 
-
-  User.register({
-      username: req.body.username,
-      name: req.body.firstName
-    },
-    req.body.password,
-    (err, user) => {
-      if (err) {
-        console.log(err);
-        res.redirect("/register");
-      } else {
-        passport.authenticate("local")(req, res, () => {
-          res.redirect("/profile");
-        });
-      }
-    },
-  );
-  const userDetail = new Details({
-    firstName: req.body.firstName,
-    lastName: req.body.lastName,
-    email: req.body.username,
-
-  });
-
-  userDetail.save((err) => {
-    if (err) {
-      console.log(err);
-    } else {
-      console.log("Sucessfully save details");
-    }
-  });
 });
 
 app.get("/login", (req, res) => {
   res.render("login");
 });
 
-app.post("/login", (req, res) => {
-  
-  const user = new User({
-    username: req.body.username,
-    password: req.body.password,
-  });
-  req.login(user, (err) => {
-    if (err) {
-      console.log(err);
-    } else {
-      passport.authenticate("local")(req, res, () => {
-        
-          res.redirect("/profile");
-      
-      });
 
-    }
-  });
+
+app.post("/login", (req, res,next) => {
+
+  passport.authenticate('local', {
+    successRedirect: '/profile',
+    failureRedirect: '/login',
+  })(req, res,next);
+
+
 });
+
 
 app.post("/online-compiler", (req, res) => {
   editorLang = req.body.Lang;
@@ -257,14 +213,14 @@ app.post("/online-compiler", (req, res) => {
 app.get(
   "/auth/google",
   passport.authenticate("google", {
-    scope: ["profile"]
+    scope: ["profile","email"]
   })
 );
 
 app.get(
   "/auth/google/secrets",
   passport.authenticate("google", {
-    failureRedirect: "/login"
+    failureRedirect: "/login",
   }),
   function(req, res) {
     // Successful authentication, redirect home.
@@ -272,7 +228,7 @@ app.get(
   }
 );
 
-app.get("/auth/facebook", passport.authenticate("facebook"));
+app.get("/auth/facebook", passport.authenticate("facebook",{ scope : ['email'] }));
 
 app.get(
   "/auth/facebook/secrets",
@@ -284,31 +240,40 @@ app.get(
     res.redirect("/profile");
   }
 );
-app.get("/profile", (req, res) => {
-  
-  
-  if (req.isAuthenticated()) {
-    Details.findOne({email:req.user.username},(err,user)=>{
-      if(!err){
-        const fullName=user.firstName+" "+ user.lastName;
-        const email=user.email;
-        res.render("profile",{name:fullName,mail:email});
-      }
-    });
-  } else {
-    res.redirect("/login");
-  }
+
+app.get("/profile", async(req, res) => {
+
+  // res.render("profile");
+if(req.isAuthenticated()){
+  materialArray=File.find({}).toArray();
+  res.render("profile",{name:req.user.name,imageUrl:req.user.imageUrl,email:req.user.username,studymaterial:materialArray});
+}else{
+  res.redirect("/login");
+}
 
   
 });
 
-app.post("/profile",(req,res)=>{
-  console.log(req);
+
+app.get('/logout', (req, res) => {
+  req.logout();
+  console.log('You are logged out');
+  res.redirect('/login');
 });
+
+// app.post("/profile",(req,res)=>{
+ 
+// });
+
+app.get("/store",(req,res)=>{
+       res.render("store");
+  
+});
+
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, 'uploads/')
+    cb(null, __dirname+'/uploads/')
   },
   filename: function (req, file, cb) {
       let ext = path.extname(file.originalname)
@@ -332,52 +297,26 @@ const upload = multer ({
 })
 
 
-app.post("/store", upload.array("destination[]") , store);
+app.post("/store", upload.array("destination") , store);
 
-app.post("/profile",(req,res)=>{
-  console.log(req);
-});
-
-
-
+app.get('/files/:id', (req, res) => {
+  var filename = req.params.id;
+   
+  File.findOne({'_id': filename }, (err, result) => {
+    
+      if (err) return console.log(err)
+   
+     res.contentType('application/pdf');
+    //  res.send(result.destination[0]);
+    
+      
+    })
+  })
 
 app.get("/donation", (req, res) => {
   res.render("donation");
 });
 
-// <---------------- Donation Page ------------------>
-
-// let instance = new Razorpay({
-//     key_id:process.env.RAZORPAY_ID, // your `KEY_ID`
-//     key_secret: process.env.RAZORPAY_SECRET // your `KEY_SECRET`
-//   })
-
-//   app.use(bodyParser.json());
-
-//   app.post("/api/payment/order",(req,res)=>{
-//   params=req.body;
-//   instance.orders.create(params).then((data) => {
-//          res.send({"sub":data,"status":"success"});
-//   }).catch((error) => {
-//          res.send({"sub":error,"status":"failed"});
-//   })
-//   });
-
-//   app.post("/api/payment/verify",(req,res)=>{
-//   body=req.body.razorpay_order_id + "|" + req.body.razorpay_payment_id;
-//   var crypto = require("crypto");
-//   var expectedSignature = crypto.createHmac('grc_sr',process.env.RAZORPAY_SECRET )
-//                                   .update(body.toString())
-//                                   .digest('hex');
-//                                   console.log("sig"+req.body.razorpay_signature);
-//                                   console.log("sig"+expectedSignature);
-//   var response = {"status":"failure"}
-//   if(expectedSignature === req.body.razorpay_signature)
-//    response={"status":"success"}
-//       res.send(response);
-//   });
-
-// <---------------- Donation Page ------------------>
 
 let port = process.env.PORT || 3000;
 
