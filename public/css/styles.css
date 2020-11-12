@@ -185,10 +185,7 @@ hr {
     font-size: 4rem;
   }
 
-  h3 {
-    font-size: 2.5rem;
-  }
-
+ 
   .navbar-toggler-icon {
     width: 5em;
     height: 5em;
@@ -295,7 +292,7 @@ hr {
 
 h3 {
   color: black;
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 .card-body {
   flex: 1 1 auto;
@@ -353,4 +350,33 @@ h3 {
 
 .selector-item {
   text-align: left;
+}
+
+
+/* Subject card */
+
+.collapse-content .fa.fa-heart:hover {
+  color: #f44336 !important;
+}
+.collapse-content .fa.fa-share-alt:hover {
+  color: #0d47a1 !important;
+}
+
+.unit-card-deck {
+  margin-top: 30px;
+}
+
+#material-card {
+  width: 25%;
+  display: inline-block;
+  margin: 20px 20px ;
+}
+#material-card .card-title{
+  color: #00122B;
+}
+
+.unit-cards {
+  width: 35%;
+  display: inline-block;
+  margin: 20px auto ;
 }

@@ -43,17 +43,16 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-mongoose.connect("mongodb://localhost:27017/devclubDB",{
-  useUnifiedTopology: true,
-  useNewUrlParser: true,
-});
+// mongoose.connect("mongodb+srv://grc_sr:Western@12@grcs-developers-club.g7k6t.mongodb.net/devclubDB",{
+//   useUnifiedTopology: true,
+//   useNewUrlParser: true,
+// });
 
-const mongoURI="mongodb://localhost:27017/devclubDB";
+const mongoURI="mongodb+srv://grc_sr:Western@12@grcs-developers-club.g7k6t.mongodb.net/devclubDB";
 
-const conn = mongoose.createConnection(mongoURI,{
-  useUnifiedTopology: true,
-  useNewUrlParser: true
-});
+const devclubDB = mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
+
+const conn = mongoose.connection;
 
 
 mongoose.set("useCreateIndex", true);
@@ -72,7 +71,7 @@ conn.once("open", () => {
 //cretate storage engine
 
 const storage = new GridFsStorage({
-  url: mongoURI,
+  db: devclubDB,
   file: (req, file) => {
     return new Promise((resolve, reject) => {
       crypto.randomBytes(16, (err, buf) => {
@@ -280,6 +279,7 @@ app.get("/logout", (req, res) => {
 
 app.get("/store", (req, res) => {
 
+      // res.render("store");
   if (req.isAuthenticated()) {
     res.render("store");
   } else {
@@ -320,14 +320,14 @@ app.get("/files/:fileName",(req,res)=>{
       err:"Not an Image",
     })
   }
-  // return res.json(file[0]);
+ 
 });
   
 });
 
 
 app.post("/store", upload.single("file"), (req,res)=>{
-  // res.json({file:req.file});
+  
   const file = new File({
     fileName: req.file.filename,
     department: req.body.department,
@@ -335,11 +335,10 @@ app.post("/store", upload.single("file"), (req,res)=>{
     semester: req.body.semester,
     subject: req.body.subject,
     unit: req.body.unit,
-    path: "/department/"+req.body.department+"/yearOfStudy/"+req.body.yearOfStudy+"/semester/"+req.body.semester+"/subject/"+req.body.subject+"/unit/"+req.body.unit,
+    path: "/department/"+req.body.department+"/yearOfStudy/"+req.body.yearOfStudy+"/semester/"+req.body.semester+"/subject/"+req.body.subject,
   });
   file.save((err)=>{
     if(!err){
-      
       console.log("Sucessfully saved file details");
       res.redirect("/store");
     }else{
@@ -348,6 +347,39 @@ app.post("/store", upload.single("file"), (req,res)=>{
     }
   });
 });
+
+app.get("/resources",(req,res)=>{
+  if (req.isAuthenticated()) {
+    res.render("resources");
+  } else {
+    res.redirect("/login");
+  }
+  
+});
+
+
+app.post("/resources",(req,res)=>{
+
+  const subjectValue=req.body.subject;
+  res.render("subject",{subject:subjectValue});
+});
+
+
+app.post("/resources/:material",(req,res)=>{
+
+  const subjectValue=req.params.material;
+  const unitNo= req.body.unit;
+  
+  File.find({subject: subjectValue,unit:unitNo},(err,files)=>{
+    
+    res.render("material",{files:files});
+  })
+
+
+  
+});
+
+
 
 // app.get("/files/:id", (req, res) => {
 //   var filename = req.params.id;
@@ -364,6 +396,46 @@ app.get("/donation", (req, res) => {
   res.render("donation");
 });
 
+// app.post("/subject",(req,res)=>{
+//   //passing subject parameter to masterial route to find out the files
+  
+ 
+
+//   res.redirect('/material');
+  
+// });
+
+// app.get("/material",(req,res)=>{
+ 
+
+//   File.find({subject: subject},(err,files)=>{
+//     files.forEach((file)=>{
+//       gfs.find({filename : file.fileName}).toArray((err,file)=>{
+//         //check if files exist
+//       if(!file[0]||file.length === 0){
+//         return res.status(404).json({
+//           success:false,
+//           message:"No Files Available"
+//         });
+//       }
+//       if(file[0].contentType === "image/jpeg" || file[0].contentType === "application/pdf"|| file[0].contentType === "image/jpg" || file[0].contentType ==="image/png"){
+        
+//         gfs.openDownloadStreamByName(file.fileName).pipe(res);
+//         res.render("material",{filename:file.fileName});
+//       }else{
+//         res.status(404).json({
+//           err:"Not an Image",
+//         })
+//       }
+//       // return res.json(file[0]);
+//     });
+//     })
+//   })
+
+ 
+
+  
+// });
 let port = process.env.PORT || 3000;
 
 app.listen(port, (req, res) => {

@@ -1,0 +1,16 @@
+<%- include("header")-%>
+
+<% files.forEach((file)=>{ %>
+    <div id="material-card" class="card">
+        <div class="card-body">
+            <h5 class="card-title"><%=file.subject%></h5>
+            <i class="fa fa-file-pdf-o card-img-top" aria-hidden="true" style="font-size:150px;color:red"></i>
+           
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            <a href="/files/<%=file.fileName%>" class="btn btn-danger">Download</a>
+        </div>
+        </div>
+<% }) %>
+
+
+<%- include("footer") -%>
