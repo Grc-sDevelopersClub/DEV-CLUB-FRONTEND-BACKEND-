@@ -96,5 +96,5 @@ var fe_SEM_I = ["Engineering
                             var civil_SE_SEM_II = ["Concrete Technology", "Fluid Mechanics-I"];
                             var civil_TE_SEM_I = ["Hydrology and Water Resources Engineering ", "Structural Design - I ", "Infrastructure Engineering and Construction Techniques", "", ""];
                             var civil_TE_SEM_II = ["Project Management and Engineering Economics ", "Environmental Engineering I"];
-                            var civil_BE_SEM_I = ["", "", "", "", ""];
-                            var civil_BE_SEM_II = ["", "", "", "", ""];
+                            var civil_BE_SEM_I = ["EnvironmentalEngineering II", "Transportation Engineering", "Structural Design and Drawing III ", "Elective I", "Elective II"];
+                            var civil_BE_SEM_II = ["Dams and Hydraulic Structures", "Quantity Surveying","Contracts and Tenders", "Elective III", "Elective IV"];
