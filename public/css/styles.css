@@ -17,7 +17,6 @@ h6 {
 /* NavBar */
 .container-fluid {
     /* text-align: left; */
-    padding: 3% 12% 7%;
 }
 
 /* .navbar-fixed {
@@ -168,7 +167,7 @@ hr {
     padding: 2%;
 }
 
-@media (max-width:992px) {
+@media (min-width:992px) {
     body {
         font-size: 150%;
     }
@@ -203,11 +202,6 @@ hr {
     .navbar-nav {
         font-size: 3rem;
         text-align: left;
-    }
-
-    .language-item {
-        font-size: 12rem;
-        padding: 0;
     }
 
     .welearn-section {
@@ -440,5 +434,5 @@ h3 {
 .languages .language-item {
     height: 256px;
     width: 256px;
-    padding: 10px 5px;
+    padding: 5px 5px;
 }
