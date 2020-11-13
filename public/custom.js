@@ -128,6 +128,7 @@ var subjectOptions;
 	$("#yearMenu").change(function(){
 	if($(this).val()==="FE"){
 			$.getJSON('json/feSubjects.json',function(result){
+				subjectOptions="";
 			$.each(result, function(i,subject) {
 				//<option value='districtName'>districtName</option>
 				subjectOptions+="<option value='"
@@ -138,7 +139,203 @@ var subjectOptions;
 				 });
 				 $('#subject').html(subjectOptions);
 			});
+		}else if($(this).val()==="CSESE"){
+			$.getJSON('json/cseSeSubjects.json',function(result){
+				subjectOptions="";
+				$.each(result, function(i,subject) {
+					//<option value='districtName'>districtName</option>
+					subjectOptions+="<option value='"
+					+subject.code+
+					"'>"
+					+subject.name+
+					"</option>";
+					 });
+					 $('#subject').html(subjectOptions);
+				});
+		}else if($(this).val()==="CSETE"){
+			$.getJSON('json/cseTeSubjects.json',function(result){
+				subjectOptions="";
+				$.each(result, function(i,subject) {
+					//<option value='districtName'>districtName</option>
+					subjectOptions+="<option value='"
+					+subject.code+
+					"'>"
+					+subject.name+
+					"</option>";
+					 });
+					 $('#subject').html(subjectOptions);
+				});
+		}else if($(this).val()==="CSEBE"){
+			$.getJSON('json/cseBeSubjects.json',function(result){
+				subjectOptions="";
+				$.each(result, function(i,subject) {
+					//<option value='districtName'>districtName</option>
+					subjectOptions+="<option value='"
+					+subject.code+
+					"'>"
+					+subject.name+
+					"</option>";
+					 });
+					 $('#subject').html(subjectOptions);
+				});
+		}else if($(this).val()==="ITSE"){
+			$.getJSON('json/itSeSubjects.json',function(result){
+				subjectOptions="";
+				$.each(result, function(i,subject) {
+					//<option value='districtName'>districtName</option>
+					subjectOptions+="<option value='"
+					+subject.code+
+					"'>"
+					+subject.name+
+					"</option>";
+					 });
+					 $('#subject').html(subjectOptions);
+				});
+		}else if($(this).val()==="ITTE"){
+			$.getJSON('json/itTeSubjects.json',function(result){
+				subjectOptions="";
+				$.each(result, function(i,subject) {
+					//<option value='districtName'>districtName</option>
+					subjectOptions+="<option value='"
+					+subject.code+
+					"'>"
+					+subject.name+
+					"</option>";
+					 });
+					 $('#subject').html(subjectOptions);
+				});
+		}else if($(this).val()==="ITBE"){
+			$.getJSON('json/itBeSubjects.json',function(result){
+				subjectOptions="";
+				$.each(result, function(i,subject) {
+					//<option value='districtName'>districtName</option>
+					subjectOptions+="<option value='"
+					+subject.code+
+					"'>"
+					+subject.name+
+					"</option>";
+					 });
+					 $('#subject').html(subjectOptions);
+				});
+		}else if($(this).val()==="E&TCSE"){
+			$.getJSON('json/e&tcSeSubjects.json',function(result){
+				subjectOptions="";
+				$.each(result, function(i,subject) {
+					//<option value='districtName'>districtName</option>
+					subjectOptions+="<option value='"
+					+subject.code+
+					"'>"
+					+subject.name+
+					"</option>";
+					 });
+					 $('#subject').html(subjectOptions);
+				});
+		}else if($(this).val()==="E&TCTE"){
+			$.getJSON('json/e&tcTeSubjects.json',function(result){
+				subjectOptions="";
+				$.each(result, function(i,subject) {
+					//<option value='districtName'>districtName</option>
+					subjectOptions+="<option value='"
+					+subject.code+
+					"'>"
+					+subject.name+
+					"</option>";
+					 });
+					 $('#subject').html(subjectOptions);
+				});
+		}else if($(this).val()==="E&TCBE"){
+			$.getJSON('json/e&tcBeSubjects.json',function(result){
+				subjectOptions="";
+				$.each(result, function(i,subject) {
+					//<option value='districtName'>districtName</option>
+					subjectOptions+="<option value='"
+					+subject.code+
+					"'>"
+					+subject.name+
+					"</option>";
+					 });
+					 $('#subject').html(subjectOptions);
+				});
+		}else if($(this).val()==="MECHSE"){
+			$.getJSON('json/mechSeSubjects.json',function(result){
+				subjectOptions="";
+				$.each(result, function(i,subject) {
+					//<option value='districtName'>districtName</option>
+					subjectOptions+="<option value='"
+					+subject.code+
+					"'>"
+					+subject.name+
+					"</option>";
+					 });
+					 $('#subject').html(subjectOptions);
+				});
+		}else if($(this).val()==="MECHTE"){
+			$.getJSON('json/mechTeSubjects.json',function(result){
+				subjectOptions="";
+				$.each(result, function(i,subject) {
+					//<option value='districtName'>districtName</option>
+					subjectOptions+="<option value='"
+					+subject.code+
+					"'>"
+					+subject.name+
+					"</option>";
+					 });
+					 $('#subject').html(subjectOptions);
+				});
+		}else if($(this).val()==="MECHBE"){
+			$.getJSON('json/mechBeSubjects.json',function(result){
+				subjectOptions="";
+				$.each(result, function(i,subject) {
+					//<option value='districtName'>districtName</option>
+					subjectOptions+="<option value='"
+					+subject.code+
+					"'>"
+					+subject.name+
+					"</option>";
+					 });
+					 $('#subject').html(subjectOptions);
+				});
+		}else if($(this).val()==="CIVILSE"){
+			$.getJSON('json/civilSeSubjects.json',function(result){
+				subjectOptions="";
+				$.each(result, function(i,subject) {
+					//<option value='districtName'>districtName</option>
+					subjectOptions+="<option value='"
+					+subject.code+
+					"'>"
+					+subject.name+
+					"</option>";
+					 });
+					 $('#subject').html(subjectOptions);
+				});
+		}else if($(this).val()==="CIVILTE"){
+			$.getJSON('json/civilTeSubjects.json',function(result){
+				subjectOptions="";
+				$.each(result, function(i,subject) {
+					//<option value='districtName'>districtName</option>
+					subjectOptions+="<option value='"
+					+subject.code+
+					"'>"
+					+subject.name+
+					"</option>";
+					 });
+					 $('#subject').html(subjectOptions);
+				});
+		}else if($(this).val()==="CIVILBE"){
+			$.getJSON('json/civilBeSubjects.json',function(result){
+				subjectOptions="";
+				$.each(result, function(i,subject) {
+					//<option value='districtName'>districtName</option>
+					subjectOptions+="<option value='"
+					+subject.code+
+					"'>"
+					+subject.name+
+					"</option>";
+					 });
+					 $('#subject').html(subjectOptions);
+				});
 		}
+
 	});
 	
 });

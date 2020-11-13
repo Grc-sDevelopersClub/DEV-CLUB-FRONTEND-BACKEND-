@@ -1,0 +1,13 @@
+[
+  { "name": "Electrical and Electronics Engineering ", "code": "EXE" },
+  { "name": "Engineering Thermodynamics", "code": "ET" },
+  { "name": "Solid Modeling and Drafting", "code": "SMD" },
+  { "name": "Engineering Materials and Metallurgy", "code": "EMM" },
+  { "name": "Solid Mechanics", "code": "SM" },
+  { "name": "Solid Modeling and Drafting", "code": "SMD" },
+  { "name": "Fluid Mechanics ", "code": "FM" },
+  { "name": "Engineering Metallurgy", "code": "EM" },
+  { "name": "Applied Thermodynamics", "code": "AT" },
+  { "name": "Electrical & Electronics Engineering ", "code": "EEE" },
+  { "name": "Theory of Machines - I", "code": "TM1" }
+]

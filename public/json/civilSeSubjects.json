@@ -1,0 +1,9 @@
+[
+  { "name": "Fluid Mechanics", "code": "FM" },
+  { "name": "Building Technology & Architectural Planning", "code": "BTAP" },
+  { "name": "Engineering Mathematics - III", "code": "M3" },
+  { "name": "Engineering Geology", "code": "EG" },
+  { "name": "Mechanics of Structure", "code": "MS" },
+  { "name": "Concrete Technology", "code": "CT" },
+  { "name":  "Fluid Mechanics-I", "code": "FM1" }
+]

@@ -1,0 +1,10 @@
+[
+  { "name": "Hydrology and Water Resources Engineering ", "code": "HWRE" },
+  { "name": "Structural Design - I ", "code": "SD1" },
+  {
+    "name": "Infrastructure Engineering and Construction Techniques",
+    "code": "IECT"
+  },
+  { "name": "Project Management and Engineering Economics ",  "code": "PMEE" },
+  { "name": "Environmental Engineering I", "code": "EE" }
+]

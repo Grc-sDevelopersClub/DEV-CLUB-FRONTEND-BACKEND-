@@ -312,12 +312,12 @@ app.post("/profileUpdate",(req,res)=>{
 
 app.get("/store", (req, res) => {
 
-      // res.render("store");
-  if (req.isAuthenticated()&& req.user.systemAdmin===true) {
-    res.render("store");
-  } else {
-    res.redirect("/login");
-  }
+      res.render("store");
+  // if (req.isAuthenticated()&& req.user.systemAdmin===true) {
+  //   res.render("store");
+  // } else {
+  //   res.redirect("/login");
+  // }
   
 });
 

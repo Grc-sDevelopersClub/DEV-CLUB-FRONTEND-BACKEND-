@@ -380,3 +380,16 @@ h3 {
   display: inline-block;
   margin: 20px auto ;
 }
+.flex-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.flex-container > div {
+  
+  margin: 10px;
+  /* padding: 20px; */
+  
+  align-items: center;
+}

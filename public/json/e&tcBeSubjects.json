@@ -1,16 +1,11 @@
 [
-    { "name": "Digital Signal Processing", "code": "DSP" },
-    { "name": "Mechatronics", "code": "MECHATRONICS" },
-    { "name": "Digital Communication", "code": "DC" },
-    { "name": "Microcontrollers", "code": "MICROCONTROLLER" },
-    { "name": "Electromagnetics", "code": "EM" },
-    { "name": "System Programming & Operating System", "code": "SPOS" },
-    { "name": "Power Electronics", "code": "PE" },
-    {
-      "name": "Information Theory, Coding Techniques and Communication Networks",
-      "code": "ITCTCN"
-    },
-    { "name": "Advanced Processors", "code": "AP" },
-    { "name": "Business Management(Industrial Management) ", "code": "BM" }
+    { "name": "Computer Networks & Security",   "code": "CNS" },
+    { "name": "VLSI Design and Technology ", "code": "VLSI" },
+    { "name":  "Electronic Product Design", "code": "XPD" },
+    { "name":"Radiation & Microwave Techniques", "code": "RMT" },
+    { "name": "Audio Video Engineering",  "code": "AVE" },
+    { "name": "Broadband Communication Systems ", "code": "BCS" },
+    { "name":  "Mobile Communication", "code": "MC" }
+
   ]
   
