@@ -1,0 +1,909 @@
+<%- include("header")-%>
+
+<div class="container ">
+    <div class="main-body">
+    
+          <!-- Breadcrumb -->
+          <!-- <nav aria-label="breadcrumb" class="main-breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+              <li class="breadcrumb-item"><a href="javascript:void(0)">User</a></li>
+              <li class="breadcrumb-item active" aria-current="page">User Profile</li>
+            </ol>
+          </nav> -->
+          <!-- /Breadcrumb -->
+    
+          <div class="row gutters-sm">
+            <div class="col-md-4 mb-3">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex flex-column align-items-center text-center">
+                    <img src=<%=imageUrl%> alt="Admin" class="rounded-circle" width="150">
+                    <div class="mt-3">
+                      <h4 class="mb-0"> <%=name%>  </h4>
+                     
+                      <p class="text-secondary mb-1">Full Stack Developer</p>
+                      <p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
+                      <button class="btn btn-primary">Follow</button>
+                      <a class="btn btn-danger" href="/logout">Logout</a>
+                    
+                    </div>
+                  </div>
+                </div>
+              </div>
+             
+            </div>
+            <div class="col-md-8">
+              <div class="card mb-3">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Full Name</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                    <%=name%>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Email</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                     <%=email%>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Phone</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      (239) 816-9029
+                    </div>
+                  </div>
+                  <hr>
+                 
+                      
+                    </div>
+                 
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+    <h2>We Develope your Imaginations.</h2>
+    <p>All the materials you want are right here.</p>
+
+<section class="white section">
+    <div class = "row">
+      <div class="pricing-col col-lg-6 mx-auto">
+        <div class="card">
+          <!-- <img src="images/first.jpg" class="card-img-top" alt="img-pic" height="300px" width="100px"> -->
+          <div class="card-header">
+            <h3>FIRST YEAR</h3>
+          </div>
+          <div class="card-body">
+            <div class="card-deck text-center">
+              <div class="card">
+                <div class="card-header">
+                  <h3>Semester-I</h3>
+                </div>
+                <div class="card-body">
+                  <ul>
+                    <a href = "https://www.google.com"><li>Mathematics</li></a>
+                    <a href = "https://www.google.com"><li>Mathematics</li></a>
+                    <a href = "https://www.google.com"><li>Mathematics</li></a>
+                    <a href = "https://www.google.com"><li>Mathematics</li></a>
+                    <a href = "https://www.google.com"><li>Mathematics</li></a>
+                  </ul>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header">
+                  <h3>Semester-II</h3>
+                </div>
+                <div class="card-body">
+                  <ul>
+                    <a href = "https://www.google.com"><li>Mathematics</li></a>
+                    <a href = "https://www.google.com"><li>Mathematics</li></a>
+                    <a href = "https://www.google.com"><li>Mathematics</li></a>
+                    <a href = "https://www.google.com"><li>Mathematics</li></a>
+                    <a href = "https://www.google.com"><li>Mathematics</li></a>
+                  </ul>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row ">
+      <div class="col-lg-6">
+      <div class="department-card "> 
+        <div class="  pricing-col ">
+          <div class="card">
+            <!-- <img src="images/first.jpg" class="card-img-top" alt="img-pic" height="300px" width="100px"> -->
+           
+            <div class="card-header ">
+              <h3>COMPUTER DEPARTMENT</h3>
+            </div>
+            <div class="card-body">
+              <div class="card-deck text-center">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="card year-card">
+                      <div class="card-header">
+                        <h3>SECOND YEAR</h3>
+                      </div>
+                      <div class="card-body">
+                        <div class="btn-group drop-down-button">
+                          <!-- Basic dropdown -->
+                        <button class="btn btn-primary dropdown-toggle mr-4" type="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">SEM-1</button>
+
+                        <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Separated link</a>
+                        </div>
+                        <!-- Basic dropdown -->
+                      
+                        </div>
+                        <div class="btn-group drop-down-button">
+                          <button class="btn btn-primary dropdown-toggle mr-4" type="button" data-toggle="dropdown"
+                          aria-haspopup="true" aria-expanded="false">SEM-2</button>
+  
+                          <div class="dropdown-menu">
+                            <form action="/profile" method="POST">
+                              <a class="dropdown-item" href="">Subject-0</a>
+                          <button  class="dropdown-item" name="subject-1" type="submit">subject-1</button>
+                          <button  class="dropdown-item" name="subject-2" type="submit">subject-2</button>
+                          <button  class="dropdown-item" name="subject-3" type="submit">subject-3</button>
+                          <button  class="dropdown-item" name="subject-4" type="submit">subject-4</button>
+                          <button  class="dropdown-item" name="subject-5" type="submit">subject-5</button>
+                        </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="card year-card">
+                      <div class="card-header">
+                        <h3>THIRD YEAR</h3>
+                      </div>
+                      <div class="card-body">
+                        <div class="btn-group drop-down-button">
+                          <!-- Basic dropdown -->
+                        <button class="btn btn-primary dropdown-toggle mr-4" type="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">SEM-1</button>
+
+                        <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Separated link</a>
+                        </div>
+                        <!-- Basic dropdown -->
+                      
+                        </div>
+                        <div class="btn-group drop-down-button">
+                          <button class="btn btn-primary dropdown-toggle mr-4" type="button" data-toggle="dropdown"
+                          aria-haspopup="true" aria-expanded="false">SEM-2</button>
+  
+                          <div class="dropdown-menu">
+                          <a class="dropdown-item" href="#">Action</a>
+                          <a class="dropdown-item" href="#">Another action</a>
+                          <a class="dropdown-item" href="#">Something else here</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">Separated link</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                  <div class="col-lg-12">
+                    <div class="card year-card">
+                      <div class="card-header">
+                        <h3>FINAL YEAR</h3>
+                      </div>
+                      <div class="card-body">
+                        <div class="btn-group drop-down-button">
+                          <!-- Basic dropdown -->
+                        <button class="btn btn-primary dropdown-toggle mr-4" type="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">SEM-1</button>
+
+                        <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Separated link</a>
+                        </div>
+                        <!-- Basic dropdown -->
+                      
+                        </div>
+                        <div class="btn-group drop-down-button">
+                          <button class="btn btn-primary dropdown-toggle mr-4" type="button" data-toggle="dropdown"
+                          aria-haspopup="true" aria-expanded="false">SEM-2</button>
+  
+                          <div class="dropdown-menu">
+                          <a class="dropdown-item" href="#">Action</a>
+                          <a class="dropdown-item" href="#">Another action</a>
+                          <a class="dropdown-item" href="#">Something else here</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">Separated link</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="department-card "> 
+        <div class="  pricing-col ">
+          <div class="card">
+            <!-- <img src="images/first.jpg" class="card-img-top" alt="img-pic" height="300px" width="100px"> -->
+           
+            <div class="card-header ">
+              <h3>IT DEPARTMENT</h3>
+            </div>
+            <div class="card-body">
+              <div class="card-deck text-center">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="card year-card">
+                      <div class="card-header">
+                        <h3>SECOND YEAR</h3>
+                      </div>
+                      <div class="card-body">
+                        <div class="btn-group drop-down-button">
+                          <!-- Basic dropdown -->
+                        <button class="btn btn-primary dropdown-toggle mr-4" type="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">SEM-1</button>
+
+                        <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Separated link</a>
+                        </div>
+                        <!-- Basic dropdown -->
+                      
+                        </div>
+                        <div class="btn-group drop-down-button">
+                          <button class="btn btn-primary dropdown-toggle mr-4" type="button" data-toggle="dropdown"
+                          aria-haspopup="true" aria-expanded="false">SEM-2</button>
+  
+                          <div class="dropdown-menu">
+                          <a class="dropdown-item" href="#">Action</a>
+                          <a class="dropdown-item" href="#">Another action</a>
+                          <a class="dropdown-item" href="#">Something else here</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">Separated link</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="card year-card">
+                      <div class="card-header">
+                        <h3>THIRD YEAR</h3>
+                      </div>
+                      <div class="card-body">
+                        <div class="btn-group drop-down-button">
+                          <!-- Basic dropdown -->
+                        <button class="btn btn-primary dropdown-toggle mr-4" type="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">SEM-1</button>
+
+                        <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Separated link</a>
+                        </div>
+                        <!-- Basic dropdown -->
+                      
+                        </div>
+                        <div class="btn-group drop-down-button">
+                          <button class="btn btn-primary dropdown-toggle mr-4" type="button" data-toggle="dropdown"
+                          aria-haspopup="true" aria-expanded="false">SEM-2</button>
+  
+                          <div class="dropdown-menu">
+                          <a class="dropdown-item" href="#">Action</a>
+                          <a class="dropdown-item" href="#">Another action</a>
+                          <a class="dropdown-item" href="#">Something else here</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">Separated link</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                  <div class="col-lg-12">
+                    <div class="card year-card">
+                      <div class="card-header">
+                        <h3>FINAL YEAR</h3>
+                      </div>
+                      <div class="card-body">
+                        <div class="btn-group drop-down-button">
+                          <!-- Basic dropdown -->
+                        <button class="btn btn-primary dropdown-toggle mr-4" type="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">SEM-1</button>
+
+                        <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Separated link</a>
+                        </div>
+                        <!-- Basic dropdown -->
+                      
+                        </div>
+                        <div class="btn-group drop-down-button">
+                          <button class="btn btn-primary dropdown-toggle mr-4" type="button" data-toggle="dropdown"
+                          aria-haspopup="true" aria-expanded="false">SEM-2</button>
+  
+                          <div class="dropdown-menu">
+                          <a class="dropdown-item" href="#">Action</a>
+                          <a class="dropdown-item" href="#">Another action</a>
+                          <a class="dropdown-item" href="#">Something else here</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">Separated link</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="row ">
+      <div class="col-lg-6">
+      <div class="department-card "> 
+        <div class="  pricing-col ">
+          <div class="card">
+            <!-- <img src="images/first.jpg" class="card-img-top" alt="img-pic" height="300px" width="100px"> -->
+           
+            <div class="card-header ">
+              <h3>CIVIL DEPARTMENT</h3>
+            </div>
+            <div class="card-body">
+              <div class="card-deck text-center">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="card year-card">
+                      <div class="card-header">
+                        <h3>SECOND YEAR</h3>
+                      </div>
+                      <div class="card-body">
+                        <div class="btn-group drop-down-button">
+                          <!-- Basic dropdown -->
+                        <button class="btn btn-primary dropdown-toggle mr-4" type="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">SEM-1</button>
+
+                        <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Separated link</a>
+                        </div>
+                        <!-- Basic dropdown -->
+                      
+                        </div>
+                        <div class="btn-group drop-down-button">
+                          <button class="btn btn-primary dropdown-toggle mr-4" type="button" data-toggle="dropdown"
+                          aria-haspopup="true" aria-expanded="false">SEM-2</button>
+  
+                          <div class="dropdown-menu">
+                          <a class="dropdown-item" href="#">Action</a>
+                          <a class="dropdown-item" href="#">Another action</a>
+                          <a class="dropdown-item" href="#">Something else here</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">Separated link</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="card year-card">
+                      <div class="card-header">
+                        <h3>THIRD YEAR</h3>
+                      </div>
+                      <div class="card-body">
+                        <div class="btn-group drop-down-button">
+                          <!-- Basic dropdown -->
+                        <button class="btn btn-primary dropdown-toggle mr-4" type="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">SEM-1</button>
+
+                        <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Separated link</a>
+                        </div>
+                        <!-- Basic dropdown -->
+                      
+                        </div>
+                        <div class="btn-group drop-down-button">
+                          <button class="btn btn-primary dropdown-toggle mr-4" type="button" data-toggle="dropdown"
+                          aria-haspopup="true" aria-expanded="false">SEM-2</button>
+  
+                          <div class="dropdown-menu">
+                          <a class="dropdown-item" href="#">Action</a>
+                          <a class="dropdown-item" href="#">Another action</a>
+                          <a class="dropdown-item" href="#">Something else here</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">Separated link</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                  <div class="col-lg-12">
+                    <div class="card year-card">
+                      <div class="card-header">
+                        <h3>FINAL YEAR</h3>
+                      </div>
+                      <div class="card-body">
+                        <div class="btn-group drop-down-button">
+                          <!-- Basic dropdown -->
+                        <button class="btn btn-primary dropdown-toggle mr-4" type="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">SEM-1</button>
+
+                        <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Separated link</a>
+                        </div>
+                        <!-- Basic dropdown -->
+                      
+                        </div>
+                        <div class="btn-group drop-down-button">
+                          <button class="btn btn-primary dropdown-toggle mr-4" type="button" data-toggle="dropdown"
+                          aria-haspopup="true" aria-expanded="false">SEM-2</button>
+  
+                          <div class="dropdown-menu">
+                          <a class="dropdown-item" href="#">Action</a>
+                          <a class="dropdown-item" href="#">Another action</a>
+                          <a class="dropdown-item" href="#">Something else here</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">Separated link</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="department-card "> 
+        <div class="  pricing-col ">
+          <div class="card">
+            <!-- <img src="images/first.jpg" class="card-img-top" alt="img-pic" height="300px" width="100px"> -->
+           
+            <div class="card-header ">
+              <h3>E&TC DEPARTMENT</h3>
+            </div>
+            <div class="card-body">
+              <div class="card-deck text-center">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="card year-card">
+                      <div class="card-header">
+                        <h3>SECOND YEAR</h3>
+                      </div>
+                      <div class="card-body">
+                        <div class="btn-group drop-down-button">
+                          <!-- Basic dropdown -->
+                        <button class="btn btn-primary dropdown-toggle mr-4" type="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">SEM-1</button>
+
+                        <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Separated link</a>
+                        </div>
+                        <!-- Basic dropdown -->
+                      
+                        </div>
+                        <div class="btn-group drop-down-button">
+                          <button class="btn btn-primary dropdown-toggle mr-4" type="button" data-toggle="dropdown"
+                          aria-haspopup="true" aria-expanded="false">SEM-2</button>
+  
+                          <div class="dropdown-menu">
+                          <a class="dropdown-item" href="#">Action</a>
+                          <a class="dropdown-item" href="#">Another action</a>
+                          <a class="dropdown-item" href="#">Something else here</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">Separated link</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="card year-card">
+                      <div class="card-header">
+                        <h3>THIRD YEAR</h3>
+                      </div>
+                      <div class="card-body">
+                        <div class="btn-group drop-down-button">
+                          <!-- Basic dropdown -->
+                        <button class="btn btn-primary dropdown-toggle mr-4" type="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">SEM-1</button>
+
+                        <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Separated link</a>
+                        </div>
+                        <!-- Basic dropdown -->
+                      
+                        </div>
+                        <div class="btn-group drop-down-button">
+                          <button class="btn btn-primary dropdown-toggle mr-4" type="button" data-toggle="dropdown"
+                          aria-haspopup="true" aria-expanded="false">SEM-2</button>
+  
+                          <div class="dropdown-menu">
+                          <a class="dropdown-item" href="#">Action</a>
+                          <a class="dropdown-item" href="#">Another action</a>
+                          <a class="dropdown-item" href="#">Something else here</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">Separated link</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                  <div class="col-lg-12">
+                    <div class="card year-card">
+                      <div class="card-header">
+                        <h3>FINAL YEAR</h3>
+                      </div>
+                      <div class="card-body">
+                        <div class="btn-group drop-down-button">
+                          <!-- Basic dropdown -->
+                        <button class="btn btn-primary dropdown-toggle mr-4" type="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">SEM-1</button>
+
+                        <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Separated link</a>
+                        </div>
+                        <!-- Basic dropdown -->
+                      
+                        </div>
+                        <div class="btn-group drop-down-button">
+                          <button class="btn btn-primary dropdown-toggle mr-4" type="button" data-toggle="dropdown"
+                          aria-haspopup="true" aria-expanded="false">SEM-2</button>
+  
+                          <div class="dropdown-menu">
+                          <a class="dropdown-item" href="#">Action</a>
+                          <a class="dropdown-item" href="#">Another action</a>
+                          <a class="dropdown-item" href="#">Something else here</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">Separated link</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="row ">
+      <div class="col-lg-6">
+      <div class="department-card "> 
+        <div class="  pricing-col ">
+          <div class="card">
+            <!-- <img src="images/first.jpg" class="card-img-top" alt="img-pic" height="300px" width="100px"> -->
+           
+            <div class="card-header ">
+              <h3>AUTOMOBILE DEPARTMENT</h3>
+            </div>
+            <div class="card-body">
+              <div class="card-deck text-center">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="card year-card">
+                      <div class="card-header">
+                        <h3>SECOND YEAR</h3>
+                      </div>
+                      <div class="card-body">
+                        <div class="btn-group drop-down-button">
+                          <!-- Basic dropdown -->
+                        <button class="btn btn-primary dropdown-toggle mr-4" type="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">SEM-1</button>
+
+                        <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Separated link</a>
+                        </div>
+                        <!-- Basic dropdown -->
+                      
+                        </div>
+                        <div class="btn-group drop-down-button">
+                          <button class="btn btn-primary dropdown-toggle mr-4" type="button" data-toggle="dropdown"
+                          aria-haspopup="true" aria-expanded="false">SEM-2</button>
+  
+                          <div class="dropdown-menu">
+                          <a class="dropdown-item" href="#">Action</a>
+                          <a class="dropdown-item" href="#">Another action</a>
+                          <a class="dropdown-item" href="#">Something else here</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">Separated link</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="card year-card">
+                      <div class="card-header">
+                        <h3>THIRD YEAR</h3>
+                      </div>
+                      <div class="card-body">
+                        <div class="btn-group drop-down-button">
+                          <!-- Basic dropdown -->
+                        <button class="btn btn-primary dropdown-toggle mr-4" type="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">SEM-1</button>
+
+                        <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Separated link</a>
+                        </div>
+                        <!-- Basic dropdown -->
+                      
+                        </div>
+                        <div class="btn-group drop-down-button">
+                          <button class="btn btn-primary dropdown-toggle mr-4" type="button" data-toggle="dropdown"
+                          aria-haspopup="true" aria-expanded="false">SEM-2</button>
+  
+                          <div class="dropdown-menu">
+                          <a class="dropdown-item" href="#">Action</a>
+                          <a class="dropdown-item" href="#">Another action</a>
+                          <a class="dropdown-item" href="#">Something else here</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">Separated link</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                  <div class="col-lg-12">
+                    <div class="card year-card">
+                      <div class="card-header">
+                        <h3>FINAL YEAR</h3>
+                      </div>
+                      <div class="card-body">
+                        <div class="btn-group drop-down-button">
+                          <!-- Basic dropdown -->
+                        <button class="btn btn-primary dropdown-toggle mr-4" type="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">SEM-1</button>
+
+                        <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Separated link</a>
+                        </div>
+                        <!-- Basic dropdown -->
+                      
+                        </div>
+                        <div class="btn-group drop-down-button">
+                          <button class="btn btn-primary dropdown-toggle mr-4" type="button" data-toggle="dropdown"
+                          aria-haspopup="true" aria-expanded="false">SEM-2</button>
+  
+                          <div class="dropdown-menu">
+                          <a class="dropdown-item" href="#">Action</a>
+                          <a class="dropdown-item" href="#">Another action</a>
+                          <a class="dropdown-item" href="#">Something else here</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">Separated link</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="department-card "> 
+        <div class="  pricing-col ">
+          <div class="card">
+            <!-- <img src="images/first.jpg" class="card-img-top" alt="img-pic" height="300px" width="100px"> -->
+           
+            <div class="card-header ">
+              <h3>MECHANICAL DEPARTMENT</h3>
+            </div>
+            <div class="card-body">
+              <div class="card-deck text-center">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="card year-card">
+                      <div class="card-header">
+                        <h3>SECOND YEAR</h3>
+                      </div>
+                      <div class="card-body">
+                        <div class="btn-group drop-down-button">
+                          <!-- Basic dropdown -->
+                        <button class="btn btn-primary dropdown-toggle mr-4" type="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">SEM-1</button>
+
+                        <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Separated link</a>
+                        </div>
+                        <!-- Basic dropdown -->
+                      
+                        </div>
+                        <div class="btn-group drop-down-button">
+                          <button class="btn btn-primary dropdown-toggle mr-4" type="button" data-toggle="dropdown"
+                          aria-haspopup="true" aria-expanded="false">SEM-2</button>
+  
+                          <div class="dropdown-menu">
+                          <a class="dropdown-item" href="#">Action</a>
+                          <a class="dropdown-item" href="#">Another action</a>
+                          <a class="dropdown-item" href="#">Something else here</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">Separated link</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="card year-card">
+                      <div class="card-header">
+                        <h3>THIRD YEAR</h3>
+                      </div>
+                      <div class="card-body">
+                        <div class="btn-group drop-down-button">
+                          <!-- Basic dropdown -->
+                        <button class="btn btn-primary dropdown-toggle mr-4" type="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">SEM-1</button>
+
+                        <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Separated link</a>
+                        </div>
+                        <!-- Basic dropdown -->
+                      
+                        </div>
+                        <div class="btn-group drop-down-button">
+                          <button class="btn btn-primary dropdown-toggle mr-4" type="button" data-toggle="dropdown"
+                          aria-haspopup="true" aria-expanded="false">SEM-2</button>
+  
+                          <div class="dropdown-menu">
+                          <a class="dropdown-item" href="#">Action</a>
+                          <a class="dropdown-item" href="#">Another action</a>
+                          <a class="dropdown-item" href="#">Something else here</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">Separated link</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                  <div class="col-lg-12">
+                    <div class="card year-card">
+                      <div class="card-header">
+                        <h3>FINAL YEAR</h3>
+                      </div>
+                      <div class="card-body">
+                        <div class="btn-group drop-down-button">
+                          <!-- Basic dropdown -->
+                        <button class="btn btn-primary dropdown-toggle mr-4" type="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">SEM-1</button>
+
+                        <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Separated link</a>
+                        </div>
+                        <!-- Basic dropdown -->
+                      
+                        </div>
+                        <div class="btn-group drop-down-button">
+                          <button class="btn btn-primary dropdown-toggle mr-4" type="button" data-toggle="dropdown"
+                          aria-haspopup="true" aria-expanded="false">SEM-2</button>
+  
+                          <div class="dropdown-menu">
+                          <a class="dropdown-item" href="#">Action</a>
+                          <a class="dropdown-item" href="#">Another action</a>
+                          <a class="dropdown-item" href="#">Something else here</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">Separated link</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+
+  
+
+  <%- include("footer")-%>

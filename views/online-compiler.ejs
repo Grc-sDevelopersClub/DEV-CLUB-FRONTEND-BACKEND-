@@ -1,0 +1,42 @@
+<%- include("header") -%>
+
+<div class="header">
+  <h1>Online Compiler</h1>
+</div>
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Choose Your Language
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <form action="/online-compiler" method="POST">
+      <button type="submit" name="Lang" value="python" class="dropdown-item ">Python</button>
+      <button type="submit" name="Lang" value="cpp" class="dropdown-item ">C++</button>
+      <button type="submit" name="Lang" value="java" class="dropdown-item">Java</button>
+      <button type="submit" name="Lang" value="c" class="dropdown-item ">C</button>
+      <button type="submit" name="Lang" value="html-css-js" class="dropdown-item ">HTML5 CSS JS</button>
+      <button type="submit" name="Lang" value="go" class="dropdown-item ">Go</button>
+      <button type="submit" name="Lang" value="ruby" class="dropdown-item ">Ruby</button>
+
+      <button type="submit" name="Lang" value="rust" class="dropdown-item ">Rust</button>
+      <button type="submit" name="Lang" value="bash" class="dropdown-item  ">Bash</button>
+      <button type="submit" name="Lang" value="swift" class="dropdown-item ">Swift</button>
+      <button type="submit" name="Lang" value="scala" class="dropdown-item ">Scala</button>
+      <button type="submit" name="Lang" value="pygame" class="dropdown-item ">Pygame</button>
+      <button type="submit" name="Lang" value="java-swing" class="dropdown-item ">Java Swing</button>
+    </form>
+
+  </div>
+</div>
+
+<div id="showdata">
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="app.js" charset="utf-8"></script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $("#showdata").load("Compilers/<%= language %>.html");
+  });
+</script>
+<%- include("footer") -%>
