@@ -383,29 +383,32 @@ app.post("/store", upload.single("file"), (req,res)=>{
 });
 
 app.get("/resources",(req,res)=>{
-  if (req.isAuthenticated()) {
-    res.render("resources");
-  } else {
-    res.redirect("/login");
-  }
+  res.render("resources");
+  // if (req.isAuthenticated()) {
+  //   res.render("resources");
+  // } else {
+  //   res.redirect("/login");
+  // }
   
 });
 
 
 app.post("/resources",(req,res)=>{
+  const year=req.body.year;
 
   const subjectValue=req.body.subject;
   
-  res.render("subject",{subject:subjectValue});
+  res.render("subject",{subject:subjectValue,yearOfStudy:year});
 });
 
 
-app.post("/resources/:material",(req,res)=>{
+app.post("/resources/:year/subject/:subject",(req,res)=>{
+  const year=req.params.year;
 
-  const subjectValue=req.params.material;
+  const subjectValue=req.params.subject;
   const unitNo= req.body.unit;
   
-  File.find({subject: subjectValue,unit:unitNo},(err,files)=>{
+  File.find({subject: subjectValue,unit:unitNo,yearOfStudy:year},(err,files)=>{
     
     res.render("material",{files:files});
   })
