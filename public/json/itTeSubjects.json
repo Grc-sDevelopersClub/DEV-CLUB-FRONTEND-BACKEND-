@@ -1,0 +1,13 @@
+[
+    { "name": "Software Engineering & Project Management",  "code": "SEPM" },
+    { "name":  "Operating System", "code": "OS" },
+    { "name":  "Human-Computer Interaction", "code": "HCI" },
+    { "name":  "Database Management Systems", "code": "DBMS" },
+    { "name": "Theory of Computation", "code": "TOC" },
+    { "name": "Computer Network Technology",   "code": "CNT" },
+    { "name": "Design and Analysis of Algorithms", "code": "DAA" },
+    { "name":  "Cloud Computing", "code": "CC" },
+    { "name": "Data Science & Big Data Analytics", "code": "DSBDA" },
+    { "name":  "Systems Programming", "code": "SP" }
+  ]
+  
