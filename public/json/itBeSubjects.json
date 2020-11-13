@@ -1,0 +1,10 @@
+[
+  { "name": "Soft Computing", "code": "SC" },
+  { "name": "Business Analytics and Intelligence", "code": "BAI" },
+  { "name": "Information and Cyber Security", "code": "ICS" },
+  { "name": "Machine Learning and Applications", "code": "MLA" },
+  { "name": "Software Design and Modeling", "code": "SDM" },
+  { "name": "Software Testing & Quality Assurance", "code": "STQA" },
+  { "name": "Distributed Computing System",  "code": "DCS" },
+  { "name": "Ubiquitious Computing ", "code": "UC" }
+]

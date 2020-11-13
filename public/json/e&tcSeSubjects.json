@@ -1,0 +1,12 @@
+[
+  { "name": "Engineering Mathematics III", "code": "M3" },
+  { "name": "Electronic Circuits", "code": "XC" },
+  { "name": "Digital Circuits ", "code": "DC" },
+  { "name": "Electrical Circuits ", "code": "EC" },
+  { "name": "Data structures ", "code": "DS" },
+  { "name": "Signals & Systems ", "code": "SS" },
+  { "name": "Control Systems ", "code": "CS" },
+  { "name": "Principles of Communication Systems ", "code": "PCS" },
+  { "name": "Object Oriented Programming ", "code": "OOP" },
+  { "name": "Signals & Control System Lab ", "code": "SCSL" }
+]
