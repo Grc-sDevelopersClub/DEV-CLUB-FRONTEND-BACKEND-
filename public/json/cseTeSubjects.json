@@ -1,0 +1,13 @@
+[
+    {"name": "Theory of Computation ",     "code": "TOC"},
+    {"name":  "Database Management Systems", "code": "DBMS"},
+    {"name": "Software Engineering & Project Management", "code": "SEPM"},
+    {"name":"Computer Networks", "code": "CN"},
+    {"name": "Information Systems & Engineering Economics", "code": "ISEE"},
+    {"name":"Systems Programming & Operating System",      "code": "SPOS"},
+    {"name":"Web Technology", "code": "WT"},
+    {"name": "Design and Analysis of Algorithms", "code": "DAA"},
+    {"name": "Embedded Systems & Internet of Things", "code": "ESIT"},
+    {"name":  "Software Modeling and Design", "code": "SMD"}
+   
+]
