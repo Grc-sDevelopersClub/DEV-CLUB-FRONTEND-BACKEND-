@@ -1,0 +1,13 @@
+[
+    {"name": "Discrete Mathematics",  "code": "DM"},
+    {"name":  "Fundamentals of Data Structures", "code": "FDS"},
+    {"name": "Object Oriented Programming(OOP)", "code": "OOP"},
+    {"name": "Computer Graphics ", "code": "CG"},
+    {"name": "Digital Electronics and Logic Design ", "code": "DELD"},
+    {"name":"Engineering Mathematics III",  "code": "M3"},
+    {"name":"Data Structures and Algorithms", "code": "DSA"},
+    {"name": "Software Engineering", "code": "SE"},
+    {"name": "Microprocessor", "code": "MP"},
+    {"name":  "Principles of Programming Languages ", "code": "PPL"}
+   
+]

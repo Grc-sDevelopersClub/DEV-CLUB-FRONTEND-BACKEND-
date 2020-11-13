@@ -100,6 +100,10 @@ const userDetails = new mongoose.Schema({
     type: String,
   },
   username: String,
+  department: String,
+  year:String,
+  sem:String,
+  systemAdmin:Boolean
 });
 const fileSchema = new mongoose.Schema({
   fileName: String,
@@ -108,7 +112,7 @@ const fileSchema = new mongoose.Schema({
   semester: String,
   subject: String,
   unit: Number,
-  path: String,
+  displayName: String,
 });
 
 userDetails.plugin(passportLocalMongoose);
@@ -143,6 +147,9 @@ passport.use(
           googleId: profile.id,
           name: profile.displayName,
           imageUrl: profile.photos[0].value,
+          department:"Enter your Department",
+          year:"Enter year of study ",
+          sem:"enter semester "
         },
         function (err, user) {
           return cb(err, user);
@@ -168,6 +175,9 @@ passport.use(
           facebookId: profile.id,
           name: profile.displayName,
           imageUrl: `https://graph.facebook.com/${profile.id}/picture?access_token=${accessToken}`,
+          department:"Enter your Department",
+          year:"Enter year of study ",
+          sem:"enter semester "
         },
         function (err, user) {
           return cb(err, user);
@@ -198,7 +208,7 @@ app.get("/register", (req, res) => {
   res.render("register");
 });
 
-app.post("/register", (req, res) => {});
+// app.post("/register", (req, res) => {});
 
 app.get("/login", (req, res) => {
   res.render("login");
@@ -260,7 +270,9 @@ app.get("/profile", async (req, res) => {
       name: req.user.name,
       imageUrl: req.user.imageUrl,
       email: req.user.username,
-      // studymaterial: materialArray,
+      department:req.user.department,
+      year:req.user.year,
+      sem:req.user.sem
     });
   } else {
     res.redirect("/login");
@@ -273,14 +285,35 @@ app.get("/logout", (req, res) => {
   res.redirect("/login");
 });
 
-// app.post("/profile",(req,res)=>{
+app.get("/profileUpdate",(req,res)=>{
+  if (req.isAuthenticated()) {
+    // materialArray = File.find({}).toArray();
+    res.render("profileUpdate", {
+      name: req.user.name,
+      imageUrl: req.user.imageUrl,
+      email: req.user.username,
+      department:req.user.department,
+      year:req.user.year,
+      sem:req.user.sem
+    });
+  } else {
+    res.redirect("/login");
+  }
 
-// });
+});
+app.post("/profileUpdate",(req,res)=>{
+  Details.findOneAndUpdate({_id:req.user._id},{ $set: { department: req.body.department,year:req.body.yearOfStudy,sem:req.body.sem, name: req.body.name,}},(err,file)=>{
+    if(!err){
+      console.log("Successfully updated profile");
+      res.redirect("/profile");
+    }
+  })
+});
 
 app.get("/store", (req, res) => {
 
       // res.render("store");
-  if (req.isAuthenticated()) {
+  if (req.isAuthenticated()&& req.user.systemAdmin===true) {
     res.render("store");
   } else {
     res.redirect("/login");
@@ -335,7 +368,8 @@ app.post("/store", upload.single("file"), (req,res)=>{
     semester: req.body.semester,
     subject: req.body.subject,
     unit: req.body.unit,
-    path: "/department/"+req.body.department+"/yearOfStudy/"+req.body.yearOfStudy+"/semester/"+req.body.semester+"/subject/"+req.body.subject,
+    displayName:req.body.displayName
+    
   });
   file.save((err)=>{
     if(!err){
@@ -361,6 +395,7 @@ app.get("/resources",(req,res)=>{
 app.post("/resources",(req,res)=>{
 
   const subjectValue=req.body.subject;
+  
   res.render("subject",{subject:subjectValue});
 });
 

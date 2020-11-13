@@ -1,0 +1,133 @@
+<%- include("header")-%>
+
+<div class="container ">
+    <div class="main-body">
+    
+          <!-- Breadcrumb -->
+          <!-- <nav aria-label="breadcrumb" class="main-breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+              <li class="breadcrumb-item"><a href="javascript:void(0)">User</a></li>
+              <li class="breadcrumb-item active" aria-current="page">User Profile</li>
+            </ol>
+          </nav> -->
+          <!-- /Breadcrumb -->
+          <form action="/profileUpdate" method="POST">
+          <div class="row gutters-sm">
+            <div class="col-md-4 mb-3">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex flex-column align-items-center text-center">
+                    <img src=<%=imageUrl%> alt="Admin" class="rounded-circle" width="150">
+                    <div class="mt-3">
+                      <h4 class="mb-0"> <%=name%>  </h4>
+                     
+                      <p class="text-secondary mb-1">Full Stack Developer</p>
+                      <p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
+                      <button class="btn btn-primary">Follow</button>
+                      <a class="btn btn-danger" href="/logout">Logout</a>
+                    
+                    </div>
+                  </div>
+                </div>
+              </div>
+             
+            </div>
+            <div class="col-md-8">
+              <div class="card mb-3">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Full Name</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                    <input type="text" name="name" placeholder=<%=name%>>
+                      
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Email</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                     <%=email%>
+                    </div>
+                  </div>
+                  <hr>
+                  
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Phone</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      (239) 816-9029
+                    </div>
+                  </div>
+                  <hr>
+                  
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Department</h6>
+                    </div>
+                      <div class="col-lg-8 selector-item">
+                        <select name="department" class="selectpicker btn-block btn-light"  data-live-search="true" title="default">
+                            <option value="firstYear" data-tokens="first">FIRST YEAR</option>
+                            <option value="computer" data-tokens="computer">COMPUTER</option>
+                            <option value="it" data-tokens="it">IT</option>
+                            <option value="civil" data-tokens="civil">CIVIL</option>
+                            <option value="mech" data-tokens="mech">MECHANICLE</option>
+                            <option value="auto" data-tokens="AUTO">AUTOMOBILE</option>
+                            <option value="e&tc" data-tokens="e&tc">E&TC</option>
+                          </select>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Year Of Study</h6>
+                    </div>
+                    <div class="col-lg-8 selector-item">
+                      <select name="yearOfStudy" class="selectpicker btn-block btn-light" data-live-search="true" title="default">
+                          <option value="fe" data-tokens="first">FIRST YEAR</option>
+                          <option value="se" data-tokens="second">SECOND YEAR</option>
+                          <option value="te" data-tokens="third">THIRD YEAR</option>
+                          <option value="be" data-tokens="fouth">FOURTH YEAR</option>
+                        </select>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Semester</h6>
+                    </div>
+                    <div class="col-lg-8 selector-item">
+                      <select name="sem" class="selectpicker btn-block btn-light" data-live-search="true" title="default">
+                          <option value="even" data-tokens="even">EVEN</option>
+                          <option value="odd" data-tokens="odd">ODD</option>
+                        </select>
+                    </div>
+                  </div>
+                  <hr>
+
+                  <button class="btn btn-primary" type="submit">Save</button>
+                </form>
+                 
+                      
+                    </div>
+                 
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+  
+
+  
+
+  <%- include("footer")-%>
