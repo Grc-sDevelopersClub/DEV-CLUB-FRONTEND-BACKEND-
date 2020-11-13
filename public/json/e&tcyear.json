@@ -1,0 +1,21 @@
+[
+    {"name": "First Year ", "code": "FE"},
+    {"name": "Second year", "code": "CSESE"},
+    {"name": "Third Year", "code": "CSETE"},
+    {"name": "Final Year", "code": "CSEBE"},
+    {"name": "Second year", "code": "CIVILSE"},
+    {"name": "Third Year", "code": "CIVILTE"},
+    {"name": "Final Year", "code": "CIVILBE"},
+    {"name": "Second year", "code": "MECHSE"},
+    {"name": "Third Year", "code": "MECHTE"},
+    {"name": "Final Year", "code": "MECHBE"},
+    {"name": "Second year", "code": "AUTOSE"},
+    {"name": "Third Year", "code": "ATUOTE"},
+    {"name": "Final Year", "code": "AUTOBE"},
+    {"name": "Second year", "code": "ITSE"},
+    {"name": "Third Year", "code": "ITTE"},
+    {"name": "Final Year", "code": "ITBE"},
+    {"name": "Second year", "code": "E&TCSE"},
+    {"name": "Third Year", "code": "E&TCTE"},
+    {"name": "Final Year", "code": "E&TCBE"}
+]

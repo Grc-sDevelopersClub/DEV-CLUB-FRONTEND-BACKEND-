@@ -9,6 +9,7 @@ var fe_SEM_I = ["Engineering
     Engineering ","
     Programming and
     Problem Solving "];
+    
     var fe_SEM_II = ["Engineering
         Mathematics - II ","
         Engineering Chemistry ","
@@ -19,14 +20,8 @@ var fe_SEM_I = ["Engineering
 
 
         // COMPUTER DEPARTMENT
-        var cse_SE_SEM_I = ["Discrete Mathematics", "Fundamentals of Data Structures", "Object Oriented Programming
-            (OOP)
-            ","
-            Computer Graphics ","
-            Digital Electronics and Logic
-            Design "];
-            var cse_SE_SEM_II = ["Engineering Mathematics III", "Data Structures and Algorithms", "Software Engineering", "Microprocessor", "Principles of Programming
-                Languages "];
+        var cse_SE_SEM_I = ["Discrete Mathematics", "Fundamentals of Data Structures", "Object Oriented Programming(OOP)","Computer Graphics ","Digital Electronics and Logic Design "];
+            var cse_SE_SEM_II = ["Engineering Mathematics III", "Data Structures and Algorithms", "Software Engineering", "Microprocessor", "Principles of Programming Languages "];
                 var cse_TE_SEM_I = ["Theory of Computation ", "Database Management Systems", "Software Engineering & Project Management", "Computer Networks", "Information Systems & Engineering Economics"];
                 var cse_TE_SEM_II = ["Systems Programming & Operating System", "Web Technology", "Design and Analysis of Algorithms", "Embedded Systems & Internet of Things", "Software Modeling and Design"];
                 var cse_BE_SEM_I = ["Software Testing and Quality Assurance", "Artificial Intelligence and Robotics", "Distributed Systems", "Data Analytics", "High Performance Computing", "Data Mining & Warehousing"];
@@ -96,5 +91,5 @@ var fe_SEM_I = ["Engineering
                             var civil_SE_SEM_II = ["Concrete Technology", "Fluid Mechanics-I"];
                             var civil_TE_SEM_I = ["Hydrology and Water Resources Engineering ", "Structural Design - I ", "Infrastructure Engineering and Construction Techniques", "", ""];
                             var civil_TE_SEM_II = ["Project Management and Engineering Economics ", "Environmental Engineering I"];
-                            var civil_BE_SEM_I = ["", "", "", "", ""];
-                            var civil_BE_SEM_II = ["", "", "", "", ""];
+                            var civil_BE_SEM_I = ["EnvironmentalEngineering II", "Transportation Engineering", "Structural Design and Drawing III ", "Elective I", "Elective II"];
+                            var civil_BE_SEM_II = ["Dams and Hydraulic Structures", "Quantity Surveying","Contracts and Tenders", "Elective III", "Elective IV"];

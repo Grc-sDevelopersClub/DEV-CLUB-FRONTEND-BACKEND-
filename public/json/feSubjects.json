@@ -1,0 +1,13 @@
+[
+    {"name": "Engineering Mathematics - I", "code": "M1"},
+    {"name": "Engineering Physics", "code": "EP"},
+    {"name": "Systems in Mechanical Engineering", "code": "CME"},
+    {"name": "Basic Electrical Engineering", "code": "BEE"},
+    {"name": "Programming and Problem Solving", "code": "PPS"},
+    {"name": "Engineering Mathematics - II", "code": "M2"},
+    {"name": "Engineering Chemistry", "code": "EC"},
+    {"name": "Basic Electronics Engineering ", "code": "BXE"},
+    {"name": "Engineering Mechanics", "code": "EM"},
+    {"name": "Engineering Graphics", "code": "EG"}
+   
+]

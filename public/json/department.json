@@ -1,0 +1,9 @@
+[
+{"name": "First Year Department", "code": "FE"},
+{"name": "Computer Department", "code": "CSE"},
+{"name": "IT Department", "code": "IT"},
+{"name": "E&TC Department", "code": "E&TC"},
+{"name": "AUTOMOBILE Department", "code": "AUTO"},
+{"name": "CIVIL Department", "code": "CIVIL"},
+{"name": "MECHANICAL Department", "code": "MECH"}
+]

@@ -1,0 +1,13 @@
+[
+    {"name": "Theory of Computation ",     "code": "DM"},
+    {"name":  "Database Management Systems", "code": "FDS"},
+    {"name": "Software Engineering & Project Management", "code": "OOP"},
+    {"name":"Computer Networks", "code": "CG"},
+    {"name": "Information Systems & Engineering Economics", "code": "DELD"},
+    {"name":"Engineering Mathematics III",  "code": "M3"},
+    {"name":"Data Structures and Algorithms", "code": "DSA"},
+    {"name": "Software Engineering", "code": "SE"},
+    {"name": "Microprocessor", "code": "MP"},
+    {"name":  "Principles of Programming Languages ", "code": "PPL"}
+   
+]
