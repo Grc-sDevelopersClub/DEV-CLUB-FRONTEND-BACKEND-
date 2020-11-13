@@ -1,0 +1,12 @@
+[
+    {"name": "Software Testing and Quality Assurance","code": "STQA"},
+    {"name": "Artificial Intelligence and Robotics", "code": "AIR"},
+    {"name":  "Distributed Systems", "code": "DS"},
+    {"name": "Data Analytics", "code": "DA"},
+    {"name": "High Performance Computing","code": "HPC"},
+    {"name":"Data Mining & Warehousing", "code": "DMW"},
+    {"name":"Compilers",   "code": "COMPILERS"},
+    {"name": "Information & Cyber Security", "code": "ICS"},
+    {"name":   "Machine Learning", "code": "ML"}
+   
+]
