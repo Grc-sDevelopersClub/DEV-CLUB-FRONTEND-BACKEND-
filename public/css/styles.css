@@ -163,84 +163,9 @@ hr {
   padding: 2%;
 }
 
-/* @media (max-width:992px) {
-  body {
-    font-size: 150%;
-  }
-
-  .title-heading {
-    text-align: center;
-  }
-
-  .title-image {
-    padding-top: 80px;
-    width: 70%;
-  }
-
-  .big-heading {
-    font-size: 4.5rem;
-  }
-
-  .secondbig-heading {
-    font-size: 4rem;
-  }
-
- 
-  .navbar-toggler-icon {
-    width: 5em;
-    height: 5em;
-  }
-
-  .navbar-brand {
-    font-size: 5rem;
-  }
-
-  .navbar-nav {
-    font-size: 3rem;
-    text-align: left;
-  }
-
-  .language-item {
-    font-size: 12rem;
-    padding: 0;
-  }
-
-  .welearn-section {
-    text-align: center;
-  }
-
-  .container-fluid {
-   
-    padding: 3% 5% 7%;
-  }
-
-  .welearn-image {
-    width: 70%;
-    padding-top: 50px;
-  }
-
-  .secondbig-heading {
-    text-align: center;
-  }
-
-  .ourroles-image {
-    width: 100%;
-    margin-top: 30%;
-    height: 50%;
-  }
-
-  .colored-section {
-    font-size: 150%;
-  }
-
-  .white-section {
-    font-size: 150%;
-  }
-
-  .btn {
-    font-size: 150%;
-  }
-} */
+@media (max-width:992px) {
+  
+}
 
 /* Profile  */
 
