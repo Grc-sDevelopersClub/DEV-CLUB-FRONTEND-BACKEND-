@@ -1,0 +1,15 @@
+[
+  { "name": "Digital Signal Processing", "code": "DSP" },
+  { "name": "Mechatronics", "code": "MECHATRONICS" },
+  { "name": "Digital Communication", "code": "DC" },
+  { "name": "Microcontrollers", "code": "MICROCONTROLLER" },
+  { "name": "Electromagnetics", "code": "EM" },
+  { "name": "System Programming & Operating System", "code": "SPOS" },
+  { "name": "Power Electronics", "code": "PE" },
+  {
+    "name": "Information Theory, Coding Techniques and Communication Networks",
+    "code": "ITCTCN"
+  },
+  { "name": "Advanced Processors", "code": "AP" },
+  { "name": "Business Management(Industrial Management) ", "code": "BM" }
+]

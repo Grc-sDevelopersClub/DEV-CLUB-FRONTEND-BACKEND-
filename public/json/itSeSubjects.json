@@ -1,0 +1,12 @@
+[
+  { "name": "Discrete Mathematics ", "code": "DM" },
+  { "name": "Logic Design and Computer Organization ", "code": "LDCO" },
+  { "name": "Data Structures and Algorithms ", "code": "DSA" },
+  { "name": "Object Oriented Programming ", "code": "OOP" },
+  { "name": " Basics of Computer Network ", "code": "BCN" },
+  { "name": "Engineering Mathematics - III ", "code": "M3" },
+  { "name": "Processor Architecture ", "code": "PA" },
+  { "name": " Database Management System", "code": "DMS" },
+  { "name": " Computer Graphics ", "code": "CG" },
+  { "name": "Software Engineering", "code": "SE" }
+]
