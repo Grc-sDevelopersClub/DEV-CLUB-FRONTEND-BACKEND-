@@ -1,0 +1,12 @@
+[
+  { "name": "Heat Transfer", "code": "HT" },
+  { "name": "Turbo Machines", "code": "TM" },
+  { "name": "Metrology & Quality Control ", "code": "MQC" },
+  { "name": "Theory of Machines - II ", "code": "TM2" },
+  { "name": "Design of Machine Elements -I ", "code": "DME1" },
+  { "name": "Numerical Methods and Optimization",     "code": "NMO" },
+  { "name": "Design of Machine Elements -II", "code": "DME2" },
+  { "name": "Refrigeration and Air Conditioning", "code": "RAC" },
+  { "name": "Mechatronics ", "code": "MECHATRONICS" },
+  { "name": "Manufacturing Process - II ", "code": "MP2" }
+]

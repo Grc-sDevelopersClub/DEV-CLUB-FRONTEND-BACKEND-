@@ -1,0 +1,11 @@
+[
+  { "name": "EnvironmentalEngineering II", "code": "STQA" },
+  { "name": "Transportation Engineering", "code": "AIR" },
+  { "name": "Structural Design and Drawing III", "code": "DS" },
+  { "name": "Elective I", "code": "DA" },
+  { "name": "Elective II", "code": "HPC" },
+  { "name": "Dams and Hydraulic Structures",  "code": "DMW" },
+  { "name": "Quantity Surveying", "code": "COMPILERS" },
+  { "name":  "Contracts and Tenders", "code": "ICS" },
+  { "name": "Elective III", "code": "ML" }
+]

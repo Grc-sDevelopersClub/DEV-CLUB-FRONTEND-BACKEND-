@@ -1,0 +1,12 @@
+[
+  { "name": "Dynamics of Machinery", "code": "DM" },
+  { "name": "Energy Audit & Management ", "code": "EAM" },
+  { "name": "Hydraulics and Pneumatics", "code": "HP" },
+  { "name": "Finite Element Analysis", "code": "FEA" },
+  { "name": "CAD/CAM & Automation", "code": "CCA" },
+  { "name": "Mechanical System Design", "code": "MSD" },
+  { "name": "Industrial Engineering", "code": "IE" },
+  { "name": "Energy Engineering", "code": "EE" },
+  { "name": "Product Design and Development", "code": "PDD" },
+  { "name": "Advanced Manufacturing Process", "code": "AMP" }
+]
