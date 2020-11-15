@@ -67,7 +67,7 @@
                     <div class="col-sm-3">
                       <h6 class="mb-0">Department</h6>
                     </div>
-                    <div class="col-sm-9 text-secondary">
+                    <div id="department" class="col-sm-9 text-secondary">
                       <%=department%>
                     </div>
                   </div>
@@ -76,7 +76,7 @@
                     <div class="col-sm-3">
                       <h6 class="mb-0">Year Of Study</h6>
                     </div>
-                    <div class="col-sm-9 text-secondary">
+                    <div id="year" class="col-sm-9 text-secondary">
                       <%=year%>
                     </div>
                   </div>
@@ -101,8 +101,49 @@
         </div>
     </div>
 
-
-  
+    <div class="row custom-card">
+      <div class="mx-auto">
+        <div class="card">
+          <!-- <img src="images/first.jpg" class="card-img-top" alt="img-pic" height="300px" width="100px"> -->
+          <div class="card-header">
+            <h3><%= department %> </h3>
+          </div>
+          <div class="card-body">
+            
+              <div class="row">
+                <div class="mx-auto">
+                  <div class="card year-card">
+                    <div class="card-header">
+                      <h3><%=year %> </h3>
+                    </div>
+                    <div class="card-body">
+                      <div class="btn-group drop-down-button">
+                        <!-- Basic dropdown -->
+                        <button
+                          class="btn btn-primary dropdown-toggle mr-4"
+                          type="button"
+                          data-toggle="dropdown"
+                          aria-haspopup="true"
+                          aria-expanded="false"
+                        >
+                          SEM-I&II
+                        </button>
+                        
+                        <form action="/resources" method="POST"> 
+                          <div id=<%=department%><%=year%>   class="dropdown-menu"></div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+             
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/resource.js" charset="utf-8"></script>
 
   
 

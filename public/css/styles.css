@@ -150,6 +150,7 @@ h1, h2, h3, h4, h5, h6 {
 .fotter-item {
   text-align: left;
   padding-bottom: 2%;
+  
 }
 
 hr {
@@ -161,6 +162,7 @@ hr {
   color: #fff;
   text-align: center;
   padding: 2%;
+  margin-bottom: 0%;
 }
 
 @media (max-width:992px) {
@@ -317,4 +319,24 @@ h3 {
   /* padding: 20px; */
   
   align-items: center;
+}
+
+.custom-card {
+  width: 100%;
+}
+.mx-auto{
+  width: 70%;
+  
+}
+
+
+.custom-card .card{
+  align-items: center;
+}
+.card-header{
+  align-items: stretch;
+}
+.custom-card .row{
+  align-items: center;
+  width: 600px;
 }

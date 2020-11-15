@@ -1,5 +1,9 @@
 <%- include("header")-%>
 
+<% if(files.length===0){ %>
+    <img src="/Images/unitNotFound.png" alt="Not Found"> 
+<% } %> 
+
 <% files.forEach((file)=>{ %>
     <div id="material-card" class="card">
         <div class="card-body">
@@ -11,7 +15,8 @@
                 <i class="far fa-file-image card-img-top" aria-hidden="true" style="font-size:150px;color:red"></i>
             <% }%>
             <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            <a href="/files/<%=file.fileName%>" class="btn btn-danger">Download</a>
+            
+            <a href="/files/<%=file.fileName%>" class="btn btn-danger" >Download</a>
         </div>
         </div>
 <% }) %>
