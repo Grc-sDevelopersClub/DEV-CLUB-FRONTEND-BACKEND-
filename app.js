@@ -14,14 +14,16 @@ const GridFsStorage = require("multer-gridfs-storage");
 const Grid = require("gridfs-stream");
 const methodOverride = require("method-override");
 const crypto = require("crypto");
-const checksum_lib = require('./checksum/checksum')
-const config= require('./checksum/config')
+const checksum_lib = require("./checksum/checksum");
+const config = require("./checksum/config");
 
-
+//Using app as express instance
 const app = express();
 
+//setting public folder as default folder for assets
 app.use(express.static("public"));
 
+//setting view engine
 app.set("view engine", "ejs");
 
 //     Middleware
@@ -44,11 +46,6 @@ app.use(
 
 app.use(passport.initialize());
 app.use(passport.session());
-
-// mongoose.connect("mongodb+srv://grc_sr:Western@12@grcs-developers-club.g7k6t.mongodb.net/devclubDB",{
-//   useUnifiedTopology: true,
-//   useNewUrlParser: true,
-// });
 
 const mongoURI =
   "mongodb+srv://grc_sr:Western@12@grcs-developers-club.g7k6t.mongodb.net/devclubDB";
@@ -322,82 +319,83 @@ app.post("/profileUpdate", (req, res) => {
   );
 });
 
-
-app.get("/paynow",(req,res)=>{
+app.get("/paynow", (req, res) => {
   res.render("donation");
 });
 
 app.post("/callback", (req, res) => {
   // Route for verifiying payment
 
-  var body = '';
+  var body = "";
 
-  req.on('data', function (data) {
-     body += data;
+  req.on("data", function (data) {
+    body += data;
   });
 
-   req.on('end', function () {
-     var html = "";
-     var post_data = qs.parse(body);
+  req.on("end", function () {
+    var html = "";
+    var post_data = qs.parse(body);
 
-     // received params in callback
-     console.log('Callback Response: ', post_data, "\n");
+    // received params in callback
+    console.log("Callback Response: ", post_data, "\n");
 
+    // verify the checksum
+    var checksumhash = post_data.CHECKSUMHASH;
+    // delete post_data.CHECKSUMHASH;
+    var result = checksum_lib.verifychecksum(
+      post_data,
+      config.PaytmConfig.key,
+      checksumhash
+    );
+    console.log("Checksum Result => ", result, "\n");
 
-     // verify the checksum
-     var checksumhash = post_data.CHECKSUMHASH;
-     // delete post_data.CHECKSUMHASH;
-     var result = checksum_lib.verifychecksum(post_data, config.PaytmConfig.key, checksumhash);
-     console.log("Checksum Result => ", result, "\n");
+    // Send Server-to-Server request to verify Order Status
+    var params = { MID: config.PaytmConfig.mid, ORDERID: post_data.ORDERID };
 
+    checksum_lib.genchecksum(params, config.PaytmConfig.key, function (
+      err,
+      checksum
+    ) {
+      params.CHECKSUMHASH = checksum;
+      post_data = "JsonData=" + JSON.stringify(params);
 
-     // Send Server-to-Server request to verify Order Status
-     var params = {"MID": config.PaytmConfig.mid, "ORDERID": post_data.ORDERID};
+      var options = {
+        hostname: "securegw-stage.paytm.in", // for staging
+        // hostname: 'securegw.paytm.in', // for production
+        port: 443,
+        path: "/merchant-status/getTxnStatus",
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+          "Content-Length": post_data.length,
+        },
+      };
 
-     checksum_lib.genchecksum(params, config.PaytmConfig.key, function (err, checksum) {
+      // Set up the request
+      var response = "";
+      var post_req = https.request(options, function (post_res) {
+        post_res.on("data", function (chunk) {
+          response += chunk;
+        });
 
-       params.CHECKSUMHASH = checksum;
-       post_data = 'JsonData='+JSON.stringify(params);
+        post_res.on("end", function () {
+          console.log("S2S Response: ", response, "\n");
 
-       var options = {
-         hostname: 'securegw-stage.paytm.in', // for staging
-         // hostname: 'securegw.paytm.in', // for production
-         port: 443,
-         path: '/merchant-status/getTxnStatus',
-         method: 'POST',
-         headers: {
-           'Content-Type': 'application/x-www-form-urlencoded',
-           'Content-Length': post_data.length
-         }
-       };
-
-
-       // Set up the request
-       var response = "";
-       var post_req = https.request(options, function(post_res) {
-         post_res.on('data', function (chunk) {
-           response += chunk;
-         });
-
-         post_res.on('end', function(){
-           console.log('S2S Response: ', response, "\n");
-
-           var _result = JSON.parse(response);
-             if(_result.STATUS == 'TXN_SUCCESS') {
-                 res.send('payment sucess')
-             }else {
-                 res.send('payment failed')
-             }
-           });
-       });
-
-       // post the data
-       post_req.write(post_data);
-       post_req.end();
+          var _result = JSON.parse(response);
+          if (_result.STATUS == "TXN_SUCCESS") {
+            res.send("payment sucess");
+          } else {
+            res.send("payment failed");
+          }
+        });
       });
-     });
-});
 
+      // post the data
+      post_req.write(post_data);
+      post_req.end();
+    });
+  });
+});
 
 app.post("/paynow", (req, res) => {
   // Route for making payment
@@ -406,41 +404,55 @@ app.post("/paynow", (req, res) => {
     amount: req.body.amount,
     customerId: req.body.name,
     customerEmail: req.body.email,
-    customerPhone: req.body.phone
-}
-if(!paymentDetails.amount || !paymentDetails.customerId || !paymentDetails.customerEmail || !paymentDetails.customerPhone) {
-    res.status(400).send('Payment failed')
-} else {
+    customerPhone: req.body.phone,
+  };
+  if (
+    !paymentDetails.amount ||
+    !paymentDetails.customerId ||
+    !paymentDetails.customerEmail ||
+    !paymentDetails.customerPhone
+  ) {
+    res.status(400).send("Payment failed");
+  } else {
     var params = {};
-    params['MID'] = config.PaytmConfig.mid;
-    params['WEBSITE'] = config.PaytmConfig.website;
-    params['CHANNEL_ID'] = 'WEB';
-    params['INDUSTRY_TYPE_ID'] = 'Retail';
-    params['ORDER_ID'] = 'TEST_'  + new Date().getTime();
-    params['CUST_ID'] = paymentDetails.customerId;
-    params['TXN_AMOUNT'] = paymentDetails.amount;
-    params['CALLBACK_URL'] = 'http://localhost:3000/callback';
-    params['EMAIL'] = paymentDetails.customerEmail;
-    params['MOBILE_NO'] = paymentDetails.customerPhone;
+    params["MID"] = config.PaytmConfig.mid;
+    params["WEBSITE"] = config.PaytmConfig.website;
+    params["CHANNEL_ID"] = "WEB";
+    params["INDUSTRY_TYPE_ID"] = "Retail";
+    params["ORDER_ID"] = "TEST_" + new Date().getTime();
+    params["CUST_ID"] = paymentDetails.customerId;
+    params["TXN_AMOUNT"] = paymentDetails.amount;
+    params["CALLBACK_URL"] = "http://localhost:3000/callback";
+    params["EMAIL"] = paymentDetails.customerEmail;
+    params["MOBILE_NO"] = paymentDetails.customerPhone;
 
+    checksum_lib.genchecksum(params, config.PaytmConfig.key, function (
+      err,
+      checksum
+    ) {
+      var txn_url = "https://securegw-stage.paytm.in/theia/processTransaction"; // for staging
+      // var txn_url = "https://securegw.paytm.in/theia/processTransaction"; // for production
 
-    checksum_lib.genchecksum(params, config.PaytmConfig.key, function (err, checksum) {
-        var txn_url = "https://securegw-stage.paytm.in/theia/processTransaction"; // for staging
-        // var txn_url = "https://securegw.paytm.in/theia/processTransaction"; // for production
+      var form_fields = "";
+      for (var x in params) {
+        form_fields +=
+          "<input type='hidden' name='" + x + "' value='" + params[x] + "' >";
+      }
+      form_fields +=
+        "<input type='hidden' name='CHECKSUMHASH' value='" + checksum + "' >";
 
-        var form_fields = "";
-        for (var x in params) {
-            form_fields += "<input type='hidden' name='" + x + "' value='" + params[x] + "' >";
-        }
-        form_fields += "<input type='hidden' name='CHECKSUMHASH' value='" + checksum + "' >";
-
-        res.writeHead(200, { 'Content-Type': 'text/html' });
-        res.write('<html><head><title>Merchant Checkout Page</title></head><body><center><h1>Please do not refresh this page...</h1></center><form method="post" action="' + txn_url + '" name="f1">' + form_fields + '</form><script type="text/javascript">document.f1.submit();</script></body></html>');
-        res.end();
+      res.writeHead(200, { "Content-Type": "text/html" });
+      res.write(
+        '<html><head><title>Merchant Checkout Page</title></head><body><center><h1>Please do not refresh this page...</h1></center><form method="post" action="' +
+          txn_url +
+          '" name="f1">' +
+          form_fields +
+          '</form><script type="text/javascript">document.f1.submit();</script></body></html>'
+      );
+      res.end();
     });
-}
+  }
 });
-
 
 app.get("/store", (req, res) => {
   res.render("store");
