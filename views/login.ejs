@@ -25,11 +25,14 @@
             <i class="fab fa-facebook"></i>
             Sign Up with Facebook
           </a>
-          <div class="alert alert-success">
-            <strong>Success!</strong> 
-          </div>
+          
 
         </div>
+        <% if(message.length > 0){ %> 
+          <div class="alert alert-success">
+            <%= message %> 
+          </div>
+        <% } %> 
     </section>
 
   </div>
