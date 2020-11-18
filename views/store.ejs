@@ -1,7 +1,11 @@
 
 <%-include("header")-%>
 
-
+<% if(message.length > 0){ %> 
+    <div class="alert alert-success">
+      <%= message %> 
+    </div>
+  <% } %> 
 
   <form action="/store" method="POST" enctype="multipart/form-data">
 

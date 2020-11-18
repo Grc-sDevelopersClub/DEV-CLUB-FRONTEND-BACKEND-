@@ -16,6 +16,8 @@ const methodOverride = require("method-override");
 const crypto = require("crypto");
 const checksum_lib = require("./checksum/checksum");
 const config = require("./checksum/config");
+const flash = require("connect-flash");
+const _ = require("lodash");
 
 //Using app as express instance
 const app = express();
@@ -39,6 +41,7 @@ app.use(methodOverride("_method"));
 app.use(
   session({
     secret: process.env.SECRET,
+    cookie: { maxAge: 60000 },
     resave: false,
     saveUninitialized: false,
   })
@@ -46,6 +49,8 @@ app.use(
 
 app.use(passport.initialize());
 app.use(passport.session());
+
+app.use(flash());
 
 const mongoURI =
   "mongodb+srv://grc_sr:Western@12@grcs-developers-club.g7k6t.mongodb.net/devclubDB";
@@ -210,7 +215,7 @@ app.get("/register", (req, res) => {
 // app.post("/register", (req, res) => {});
 
 app.get("/login", (req, res) => {
-  res.render("login");
+  res.render("login", { message: req.flash("message") });
 });
 
 app.post("/login", (req, res, next) => {
@@ -272,6 +277,7 @@ app.get("/profile", async (req, res) => {
       department: req.user.department,
       year: req.user.year,
       sem: req.user.sem,
+      message: req.flash("message"),
     });
   } else {
     res.redirect("/login");
@@ -280,7 +286,7 @@ app.get("/profile", async (req, res) => {
 
 app.get("/logout", (req, res) => {
   req.logout();
-  console.log("You are logged out");
+  req.flash("message", "You are logged out successfully");
   res.redirect("/login");
 });
 
@@ -312,16 +318,21 @@ app.post("/profileUpdate", (req, res) => {
     },
     (err, file) => {
       if (!err) {
-        console.log("Successfully updated profile");
+        req.flash("message", "Successfully updated profile");
         res.redirect("/profile");
+      } else {
+        req.flash("message", err);
       }
     }
   );
 });
 
+//route for rendering payment interface
 app.get("/paynow", (req, res) => {
   res.render("donation");
 });
+
+//callback function for paytm payment gateway
 
 app.post("/callback", (req, res) => {
   // Route for verifiying payment
@@ -397,12 +408,14 @@ app.post("/callback", (req, res) => {
   });
 });
 
+
+//payment handelling route through post paytm.
 app.post("/paynow", (req, res) => {
   // Route for making payment
 
   var paymentDetails = {
     amount: req.body.amount,
-    customerId: req.body.name,
+    customerId: req.body.phone,
     customerEmail: req.body.email,
     customerPhone: req.body.phone,
   };
@@ -463,17 +476,17 @@ app.get("/store", (req, res) => {
   // }
 });
 
-app.get("/files", (req, res) => {
-  gfs.find().toArray((err, files) => {
-    //check if files exist
-    if (!files || files.length === 0) {
-      return res.status(404).json({
-        err: "No Files Exist",
-      });
-    }
-    return res.json(files);
-  });
-});
+// app.get("/files", (req, res) => {
+//   gfs.find().toArray((err, files) => {
+//     //check if files exist
+//     if (!files || files.length === 0) {
+//       return res.status(404).json({
+//         err: "No Files Exist",
+//       });
+//     }
+//     return res.json(files);
+//   });
+// });
 
 app.get("/files/:fileName", (req, res) => {
   gfs.find({ filename: req.params.fileName }).toArray((err, file) => {
@@ -508,13 +521,14 @@ app.post("/store", upload.single("file"), (req, res) => {
     subject: req.body.subject,
     unit: req.body.unit,
     displayName: req.body.displayName,
+    message: req.flash("message"),
   });
   file.save((err) => {
     if (!err) {
-      console.log("Sucessfully saved file details");
+      req.flash("message", "Sucessfully saved file details");
       res.redirect("/store");
     } else {
-      console.log(err);
+      req.flash("message", err);
     }
   });
 });
