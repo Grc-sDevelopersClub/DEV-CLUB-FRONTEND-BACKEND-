@@ -6,11 +6,15 @@
 }
 
 .languages .language-item {
-    padding: 0.2em;
     margin: 0px 0.2em;
-    flex: 0 0 20%;
+    flex: 1 1 20%;
     font-size: 8rem;
+    height: 200px;
     transition: .5s;
+}
+
+.language-item i {
+    width: 1rem;
 }
 
 .language-item :hover {
@@ -23,4 +27,5 @@
     .languages .language-item {
         flex: 0 0 33%;
     }
+
 }
