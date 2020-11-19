@@ -14,7 +14,8 @@
 }
 
 .language-item i {
-    width: 1rem;
+    /* width: 5rem; */
+    font-size: 12rem;
 }
 
 .language-item :hover {

@@ -5,9 +5,10 @@
 
 .navbar-brand {
     font-family: "Helvetica Neue";
-    font-size: 2.5rem;
+    font-size: 4.5rem;
 }
 
 .nav-item {
     padding: 0 1.8rem;
+    font-size: 1.8rem;
 }
