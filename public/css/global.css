@@ -1,0 +1,25 @@
+.container-fluid {
+    /* text-align: left; */
+    padding: 3% 12% 7%;
+}
+
+.colored-section {
+    background: linear-gradient(0.375turn, #041c82, #00122b, #440784);
+    /* background-image: linear-gradient(to top, #5f72bd 0%, #9b23ea 100%); */
+    color: #fff;
+    text-align: center;
+}
+
+.white-section {
+    padding: 5% 15%;
+    text-align: center;
+    color: black;
+}
+
+.title-image {
+    width: 100%;
+}
+
+.title-heading {
+    text-align: left;
+}

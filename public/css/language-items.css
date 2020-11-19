@@ -1,0 +1,31 @@
+.languages {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.languages .language-item {
+    margin: 0px 0.2em;
+    flex: 1 1 20%;
+    font-size: 8rem;
+    height: 200px;
+    transition: .5s;
+}
+
+.language-item i {
+    width: 1rem;
+}
+
+.language-item :hover {
+    color: blueviolet;
+    transition: .3s;
+}
+
+
+@media screen and (max-width: 500px) {
+    .languages .language-item {
+        flex: 0 0 33%;
+    }
+
+}

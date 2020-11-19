@@ -1,0 +1,32 @@
+*,
+body,
+html {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Montserrat";
+    font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Montserrat";
+    font-weight: 900;
+    line-height: 1.5;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+hr {
+    border-top: 0.1rem solid #fff;
+    height: 1.5rem;
+}
