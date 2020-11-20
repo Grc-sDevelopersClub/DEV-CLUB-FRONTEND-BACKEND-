@@ -12,6 +12,7 @@
 
 .nav-item {
     padding: 0 1.8rem;
+    font-size: 1.8rem;
 }
 
 @media screen and (max-width:500px) {

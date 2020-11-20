@@ -12,6 +12,11 @@
     transition: .5s;
 }
 
+.language-item i {
+    /* width: 5rem; */
+    font-size: 12rem;
+}
+
 .language-item :hover {
     color: blueviolet;
     transition: .3s;
