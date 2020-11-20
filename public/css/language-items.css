@@ -9,12 +9,7 @@
     margin: 0px 0.2em;
     flex: 1 1 20%;
     font-size: 8rem;
-    height: 200px;
     transition: .5s;
-}
-
-.language-item i {
-    width: 1rem;
 }
 
 .language-item :hover {
@@ -26,6 +21,6 @@
 @media screen and (max-width: 500px) {
     .languages .language-item {
         flex: 0 0 33%;
+        font-size: 5rem;
     }
-
 }

@@ -1,30 +1,3 @@
-/* NavBar */
-.container-fluid {
-    /* text-align: left; */
-    padding: 3% 12% 7%;
-}
-
-.colored-section {
-    background: linear-gradient(0.375turn, #041c82, #00122b, #440784);
-    /* background-image: linear-gradient(to top, #5f72bd 0%, #9b23ea 100%); */
-    color: #fff;
-    text-align: center;
-}
-
-.white-section {
-    padding: 5% 15%;
-    text-align: center;
-    color: black;
-}
-
-.title-image {
-    width: 100%;
-}
-
-.title-heading {
-    text-align: left;
-}
-
 /* We Speak */
 .secondbig-heading {
     font-size: 3.5rem;
@@ -98,23 +71,6 @@
     /* background-color: #00D7F4; */
 }
 
-.fotter-item {
-    text-align: left;
-    padding-bottom: 2%;
-}
-
-hr {
-    border-top: 0.1rem solid #fff;
-    height: 1.5rem;
-}
-
-.footer-icon {
-    color: #fff;
-    text-align: center;
-    padding: 2%;
-    margin-bottom: 0%;
-}
-
 /* Header responsive */
 @media (max-width: 992px) {
     body {
@@ -137,7 +93,7 @@ hr {
     }
 
     .big-heading {
-        font-size: 4.5rem;
+        font-size: 3rem;
     }
 
     .secondbig-heading {
@@ -198,20 +154,6 @@ hr {
     .btn {
         font-size: 150%;
     }
-}
-
-.flex-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
-
-.flex-container>div {
-    margin: 10px;
-    /* padding: 20px; */
-
-    align-items: center;
 }
 
 .custom-card {

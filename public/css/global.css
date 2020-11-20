@@ -7,7 +7,6 @@
     background: linear-gradient(0.375turn, #041c82, #00122b, #440784);
     /* background-image: linear-gradient(to top, #5f72bd 0%, #9b23ea 100%); */
     color: #fff;
-    text-align: center;
 }
 
 .white-section {
@@ -22,4 +21,18 @@
 
 .title-heading {
     text-align: left;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-container>div {
+    margin: 10px;
+    /* padding: 20px; */
+
+    align-items: center;
 }
