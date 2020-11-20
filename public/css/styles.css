@@ -39,8 +39,8 @@
 
 /* We Learn */
 #welearn .container-fluid {
-    /* background: linear-gradient(0.375turn, #00D7F4, #fff); */
-    background-image: linear-gradient(to top, #9890e3 0%, #b1f4cf 100%);
+    background: linear-gradient(0.375turn, #00D7F4, #fff);
+    /* background-image: linear-gradient(to top, #9890e3 0%, #b1f4cf 100%); */
     text-align: left;
 }
 
@@ -94,11 +94,11 @@
 
 .ourteam-container {
     /* background: linear-gradient(0.125turn,#00D7F4, #fff); */
-    background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
-    /* background-color: #00D7F4; */
+    /* background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%); */
+    background-color: #00D7F4;
 }
 
-.fotter-item {
+.footer-item {
     text-align: left;
     padding-bottom: 2%;
 }
@@ -115,90 +115,17 @@ hr {
     margin-bottom: 0%;
 }
 
+@media (max-width: 768px) {
+    html {
+        font-size: 45%;
+    }
+}
+
+
 /* Header responsive */
-@media (max-width: 992px) {
-    body {
-        font-size: 150%;
-    }
 
-    @media (max-width: 768px) {
-        html {
-            font-size: 45%;
-        }
-    }
 
-    .title-heading {
-        text-align: center;
-    }
 
-    .title-image {
-        padding-top: 8rem;
-        width: 70%;
-    }
-
-    .big-heading {
-        font-size: 4.5rem;
-    }
-
-    .secondbig-heading {
-        font-size: 4rem;
-    }
-
-    h3 {
-        font-size: 2.5rem;
-    }
-
-    .navbar-toggler-icon {
-        width: 2.5rem;
-        height: 2.5rem;
-    }
-
-    .navbar-brand {
-        font-size: 5rem;
-    }
-
-    .navbar-nav {
-        font-size: 3rem;
-        text-align: left;
-    }
-
-    .welearn-section {
-        text-align: center;
-    }
-}
-
-@media (max-width: 992px) {
-    .container-fluid {
-        padding: 3% 5% 7%;
-    }
-
-    .welearn-image {
-        width: 70%;
-        padding-top: 5rem;
-    }
-
-    .secondbig-heading {
-        text-align: center;
-    }
-
-    .ourroles-image {
-        width: 100%;
-        margin-top: 30%;
-        height: 50%;
-    }
-
-    .colored-section {
-        font-size: 150%;
-    }
-
-    .white-section {
-        font-size: 150%;
-    }
-
-    .btn {
-        font-size: 150%;
-    }
-}
 
 .flex-container {
     display: flex;
@@ -239,14 +166,3 @@ hr {
     width: 100%;
 }
 
-@media (max-width: 992px) {
-    /* html {
-        font-size: 100%;
-    } */
-
-    .ourroles-image {
-        width: 100%;
-        margin-top: 40%;
-        /* height: 50%; */
-    }
-}

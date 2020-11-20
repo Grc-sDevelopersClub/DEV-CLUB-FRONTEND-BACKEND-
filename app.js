@@ -377,6 +377,7 @@ app.get("/profileUpdate", (req, res) => {
 });
 
 app.post("/profileUpdate", (req, res) => {
+console.log(req.user);
   Details.findOneAndUpdate(
     { _id: req.user._id },
     {
@@ -555,9 +556,9 @@ app.post("/paynow", (req, res) => {
 
 //Route to store all files from the admins.
 app.get("/store", (req, res) => {
-  res.render("store");
+  res.render("store",{message:req.flash("message")});
   // if (req.isAuthenticated()&& req.user.systemAdmin===true) {
-  //   res.render("store");
+  //   res.render("store",{message:req.flash("message")});
   // } else {
   //   res.redirect("/login");
   // }

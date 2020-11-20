@@ -1,3 +1,115 @@
-@media screen and (max-width:479px) {
-    /* Mobile Css */
+@media (max-width: 992px) {
+
+   
+    .title-heading {
+        text-align: center;
+        font-size: 3.5rem;
+    }
+
+    .title-image {
+        padding-top: 8rem;
+        width: 70%;
+    }
+
+    .ourroles-image {
+        width: 100%;
+        margin-top: 40%;
+        /* height: 50%; */
+    }
+
+    .big-heading {
+        font-size: 6.5rem;
+    }
+
+    .secondbig-heading {
+        font-size: 5.5rem;
+    }
+
+    p {
+        font-size: 2.8rem;
+    }
+
+    h3 {
+        font-size: 3.8rem;
+    }
+
+    .navbar-toggler-icon {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    .header-button{
+        font-size: 2.8rem;
+        border-top-left-radius:10px;
+        border-bottom-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        margin-top: 2%;
+    }
+
+    .navbar-brand {
+        font-size: 6.3rem;
+    }
+
+    .navbar-nav {
+        font-size: 3rem;
+        text-align: left;
+    }
+
+    .welearn-section {
+        text-align: center;
+    }
+
+    .container-fluid {
+        padding: 3% 5% 7%;
+    }
+
+    .welearn-image {
+        width: 70%;
+        padding-top: 5rem;
+    }
+
+    .secondbig-heading {
+        text-align: center;
+    }
+
+    .ourroles-image {
+        width: 100%;
+        margin-top: 30%;
+        height: 50%;
+    }
+
+    .colored-section {
+        font-size: 150%;
+    }
+
+    .white-section {
+        font-size: 150%;
+    }
+
+    .btn {
+        font-size: 150%;
+    }
+
+
+    #ourteam-carousel img {
+        width: 70%;
+    }
+
+
+    h4 {
+        font-size: 2.8rem;
+    }
+    #ourteam-carousel h4 {
+        font-size: 2.8rem;
+    }
+
+    .welearn-button {
+        font-size: 4.3rem;
+        border-top-left-radius:10px;
+        border-bottom-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        margin-top: 2%;
+    }
 }
