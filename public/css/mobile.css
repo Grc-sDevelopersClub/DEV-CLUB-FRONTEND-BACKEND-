@@ -29,13 +29,13 @@
         font-size: 2.8rem;
     }
 
-    h3 {
-        font-size: 3.8rem;
+    h3,h2 {
+        font-size: 4rem;
     }
 
     .navbar-toggler-icon {
-        width: 2.5rem;
-        height: 2.5rem;
+        width: 6rem;
+        height: 6rem;
     }
 
     .header-button{
@@ -91,6 +91,9 @@
         font-size: 150%;
     }
 
+    .resource-btn{
+        font-size: 8rem;
+    }
 
     #ourteam-carousel img {
         width: 70%;
@@ -105,11 +108,44 @@
     }
 
     .welearn-button {
-        font-size: 4.3rem;
+        font-size: 4.8rem;
         border-top-left-radius:10px;
         border-bottom-left-radius: 10px;
         border-top-right-radius: 10px;
         border-bottom-right-radius: 10px;
         margin-top: 2%;
     }
+
+    .btn {
+        font-size: 3rem;
+    }
+
+    .dropdown-item {
+        font-size: 2.8rem;
+    }
+    
+    .card {
+        margin: 10% 8%;
+    } 
+
+    .unit-cards {
+        margin: auto;
+        margin-top: 8%;
+        width: 100%;
+        
+    }
+
+    .card-title {
+        font-size: 3.5rem;
+    }
+
+    .header-button{
+        font-size: 5rem;
+        border-top-left-radius:10px;
+        border-bottom-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        margin-top: 2%;
+    }
+   
 }
