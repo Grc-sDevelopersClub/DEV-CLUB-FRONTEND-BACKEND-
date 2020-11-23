@@ -30,7 +30,7 @@ nav {
 }
 
 .loginregbtn {
-    background: rgba(238, 27, 57, 0.8);
+    background: rgba(238, 27, 57, 0.8) !important;
 }
 
 .loginregbtn a {
