@@ -1,22 +1,96 @@
-.navbar {
+nav {
     padding: 0 0;
-    font-size: 2vw;
+    display: flex;
+    flex-direction: column;
     background-color: transparent;
+    justify-content: center;
+    align-items: center;
 }
 
-.navbar-brand {
+.brandtext {
     font-family: "Helvetica Neue";
-    font-size: 4rem;
+    color: wheat;
     font-weight: 800;
 }
 
-.nav-item {
-    padding: 0 1.8rem;
-    font-size: 1.8rem;
+.navlinks {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
 }
 
-@media screen and (max-width:500px) {
-    .navbar-brand {
-        font-size: 1.5rem;
+.navlinks .navlink {
+    padding: 0 0.3rem;
+}
+
+.navlinks .navlink a {
+    text-decoration: none;
+    color: blueviolet;
+}
+
+.loginregbtn {
+    background: rgba(238, 27, 57, 0.8);
+}
+
+.loginregbtn a {
+    color: rgba(27, 238, 57, 1) !important;
+}
+
+@media screen and (max-width:977px) {
+
+    nav {}
+
+    nav hr {
+        width: 70vw;
     }
+
+    .brandtext {
+        font-size: 7rem;
+        text-align: center;
+        text-overflow: visible;
+        padding: 1rem 0.3rem;
+    }
+
+    .navlinks {
+        justify-content: space-between;
+        width: 90%;
+    }
+
+    .navlinks .navlink {
+        font-size: 2.6rem;
+        background-color: springgreen;
+        font-weight: 600;
+        border-radius: 10px;
+    }
+
+    .navlinks .navlink a {
+        color: black;
+    }
+}
+
+@media screen and (min-width:978px) {
+    nav {
+        flex-direction: row;
+        padding: 0.3rem 0.6rem;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    nav hr {
+        display: hidden;
+    }
+
+    .brandtext {
+        font-size: 3rem;
+    }
+
+    .navlinks {}
+
+    .navlinks .navlink {
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+
+    .navlinks .navlink a {}
 }

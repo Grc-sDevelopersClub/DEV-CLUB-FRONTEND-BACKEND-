@@ -1,6 +1,4 @@
-@media (max-width: 992px) {
-
-   
+@media screen and (max-width:900px) {
     .title-heading {
         text-align: center;
         font-size: 3.5rem;
@@ -29,31 +27,18 @@
         font-size: 2.8rem;
     }
 
-    h3,h2 {
-        font-size: 4rem;
+    h3,
+    h2 {
+        font-size: 3.7rem;
     }
 
-    .navbar-toggler-icon {
-        width: 6rem;
-        height: 6rem;
-    }
-
-    .header-button{
+    .header-button {
         font-size: 2.8rem;
-        border-top-left-radius:10px;
+        border-top-left-radius: 10px;
         border-bottom-left-radius: 10px;
         border-top-right-radius: 10px;
         border-bottom-right-radius: 10px;
         margin-top: 2%;
-    }
-
-    .navbar-brand {
-        font-size: 6.3rem;
-    }
-
-    .navbar-nav {
-        font-size: 3rem;
-        text-align: left;
     }
 
     .welearn-section {
@@ -91,7 +76,7 @@
         font-size: 150%;
     }
 
-    .resource-btn{
+    .resource-btn {
         font-size: 8rem;
     }
 
@@ -103,13 +88,14 @@
     h4 {
         font-size: 2.8rem;
     }
+
     #ourteam-carousel h4 {
         font-size: 2.8rem;
     }
 
     .welearn-button {
         font-size: 4.8rem;
-        border-top-left-radius:10px;
+        border-top-left-radius: 10px;
         border-bottom-left-radius: 10px;
         border-top-right-radius: 10px;
         border-bottom-right-radius: 10px;
@@ -123,29 +109,29 @@
     .dropdown-item {
         font-size: 2.8rem;
     }
-    
+
     .card {
         margin: 10% 8%;
-    } 
+    }
 
     .unit-cards {
         margin: auto;
         margin-top: 8%;
         width: 100%;
-        
+
     }
 
     .card-title {
         font-size: 3.5rem;
     }
 
-    .header-button{
+    .header-button {
         font-size: 5rem;
-        border-top-left-radius:10px;
+        border-top-left-radius: 10px;
         border-bottom-left-radius: 10px;
         border-top-right-radius: 10px;
         border-bottom-right-radius: 10px;
         margin-top: 2%;
     }
-   
+
 }
