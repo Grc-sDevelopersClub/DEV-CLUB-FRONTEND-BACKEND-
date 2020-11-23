@@ -50,13 +50,19 @@
         background-color: white;
     }
 
-    .btn {
+    /* .btn {
         font-size: 1.5rem;
-    }
+    } */
 
     .dropdown-item {
         font-size: 1.8rem;
     }
-
+    .btn-social {
+        font-size: 1.5rem;
+        margin: 20px 0;
+    }
+    .register-login-heading {
+        font-size: 3.5rem;
+    }
 }
 
