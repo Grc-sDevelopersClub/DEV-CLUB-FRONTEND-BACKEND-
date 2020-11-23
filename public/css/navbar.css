@@ -15,7 +15,9 @@ nav {
 
 .navlinks {
     display: flex;
-    padding: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: auto;
     margin: 0;
     list-style: none;
 }
