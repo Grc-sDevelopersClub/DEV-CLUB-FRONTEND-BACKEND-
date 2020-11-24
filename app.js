@@ -564,6 +564,11 @@ app.get("/store", (req, res) => {
   // }
 });
 
+
+app.get("/zoom",(req,res)=>{
+  res.render("zoom");
+});
+
 app.post("/store", upload.single("file"), (req, res) => {
   const file = new File({
     fileName: req.file.filename,

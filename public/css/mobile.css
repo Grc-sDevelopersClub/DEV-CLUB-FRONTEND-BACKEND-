@@ -119,11 +119,18 @@
     .btn {
         font-size: 3rem;
     }
-
+    .btn-social {
+        font-size: 3rem;
+        margin: 20px 0;
+    }
     .dropdown-item {
         font-size: 2.8rem;
     }
     
+    .register-login-heading {
+        font-size: 5.5rem;
+    }
+
     .card {
         margin: 10% 8%;
     } 
