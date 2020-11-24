@@ -3,12 +3,12 @@
 
 2 => FE box to be centered. -> harshad
 
-3 => Add padding to  books in subject.ejs -> gorakh 
+3 => Add padding to  books in subject.ejs -> gorakh
 
 4 => increste font andd add card property.
 
-5 => remove 100% width and set to specific width of each material in material.ejs
+5 => remove 100% width and set to specific width of each material in material.ejs -> rap
 
-6 => increase font in profile card and add dynamic roles , remove follow, add informative note to get specific material. -> gorakh 
+6 => increase font in profile card and add dynamic roles , remove follow, add informative note to get specific material. -> gorakh
 
 7 => add specfic materials.
