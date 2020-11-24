@@ -37,6 +37,16 @@
     
 }
 
+.resource-card {
+    width:100%;
+    background-color: #fff;
+    border-top-left-radius:30px;
+    border-bottom-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    
+}
+
 .view{
     height: 100vh;
 }
@@ -45,7 +55,11 @@
     padding-top: 8%;
 }
 
-
+.material-card {
+    
+    border: 10px solid;
+    border-color: #d3d4cd;
+}
 
      /* Profile */
 
