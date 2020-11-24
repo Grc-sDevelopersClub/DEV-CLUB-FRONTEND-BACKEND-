@@ -39,10 +39,7 @@ nav {
     color: rgba(27, 238, 57, 1) !important;
 }
 
-@media screen and (max-width:977px) {
-
-    nav {}
-
+@media screen and (max-width:480px) {
     nav hr {
         width: 70vw;
     }
@@ -60,7 +57,7 @@ nav {
     }
 
     .navlinks .navlink {
-        font-size: 2.6rem;
+        font-size: 2.8rem;
         background-color: springgreen;
         font-weight: 600;
         border-radius: 10px;
