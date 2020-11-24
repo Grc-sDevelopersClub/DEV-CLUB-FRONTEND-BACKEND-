@@ -33,6 +33,10 @@
     h4 {
         font-size: 2.5rem;
     }
+
+    h6 {
+        font-size: 1.8rem;
+    }
     #ourteam-carousel h4 {
         font-size: 2.5rem;
     }
@@ -64,5 +68,30 @@
     .register-login-heading {
         font-size: 3.5rem;
     }
+
+    .fa-book {
+        padding-top: 8%;
+    }
+
+
+     /* Profile */
+
+     .logout-btn {
+         font-size: 20px;
+         border-top-left-radius:10px;
+         border-bottom-left-radius: 10px;
+         border-top-right-radius: 10px;
+         border-bottom-right-radius: 10px;
+         margin-top: 2%;
+     }
+
+     .text-secondary9{
+         font-size: 1.5rem !important;
+
+     }
+     .btn-primary {
+         font-size: 1.5rem;
+     }
+     
 }
 

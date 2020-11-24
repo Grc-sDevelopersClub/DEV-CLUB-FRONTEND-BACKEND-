@@ -40,3 +40,38 @@
 .view{
     height: 100vh;
 }
+
+.fa-book{
+    padding-top: 8%;
+}
+
+
+
+     /* Profile */
+
+     .logout-btn {
+        font-size: 20px;
+        border-top-left-radius:10px;
+        border-bottom-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        margin-top: 2%;
+    }
+
+    .text-secondary{
+        font-size: 1.5rem !important;
+
+    }
+    .btn-primary {
+        font-size: 1.5rem;
+    }
+    .note {
+        color: red;
+    }
+
+
+    /* store  */
+     h5 {
+         font-size: 1.8rem;
+         line-height: 3.5rem;
+     }

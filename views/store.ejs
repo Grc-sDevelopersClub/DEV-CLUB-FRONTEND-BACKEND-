@@ -11,13 +11,13 @@
   <form action="/store" method="POST" enctype="multipart/form-data">
 
      <fieldset>
-     <div class="store-section container-fluid white-section upload-form">
+     <div class="store-section container-fluid white-section upload-form card">
          <div >
              <h2 class="big-heading">Submit Your Material Here!</h2>
          </div>
          <div class="row upload-form-row">
              <div class="col-lg-4">
-                <h3>Department:</h3>
+                <h5>Department:</h5>
              </div>
              <div class="col-lg-4 selector-item">
                
@@ -31,7 +31,7 @@
         </div>
         <div class="row upload-form-row">
             <div class="col-lg-4">
-                <h3>Year Of Study:</h3>
+                <h5>Year Of Study:</h5>
              </div>
              <div class="col-lg-4 selector-item">
                      <select id="yearMenu" name="yearOfStudy" class="custom-select" >
@@ -43,7 +43,7 @@
          </div>
          <div class="row upload-form-row">
              <div class="col-lg-4">
-                <h3>Semester:</h3>
+                <h5>Semester:</h5>
              </div>
              <div class="col-lg-4 selector-item">
                  <select id="semMenu" name="semester" class="selectpicker btn-block btn-light" data-live-search="true" title="default">
@@ -57,7 +57,7 @@
          </div>
          <div class="row upload-form-row">
             <div class="col-lg-4">
-                <h3>Subject:</h3>
+                <h5>Subject:</h5>
              </div>
              <div class="col-lg-4 selector-item">
                  <select id="subject" name="subject" class=" custom-select" >
@@ -69,7 +69,7 @@
          </div>
          <div class="row upload-form-row">
              <div class="col-lg-4">
-                <h3>Unit:</h3>
+                <h5>Unit:</h5>
              </div>
              <div class="col-lg-4 selector-item">
                  <select name="unit" class="selectpicker btn-block btn-light" data-style="btn-info" data-live-search="true" title="default">
@@ -88,7 +88,7 @@
          </div>
          <div class="row upload-form-row">
              <div class="col-lg-4">
-                <h3>File Name:</h3>
+                <h5>File Name:</h5>
              </div>
             <div class="col-lg-4">
                  <input id="text" class=" btn-block btn-light" type="text" name="displayName"  placeholder="Add name to your file" >
@@ -96,7 +96,7 @@
         </div>
          <div class="row upload-form-row">
              <div class="col-lg-4">
-               <h3>File:</h3>
+               <h5>File:</h5>
              </div>
              <div class="col-lg-4  ">
            <div class="custom-file mb-3">
@@ -105,8 +105,10 @@
            </div>
              </div>
          </div>
-        
-         <button class="btn btn-danger my-4" type="submit">SUBMIT</button>
+        <div>
+            <button class="btn btn-danger" type="submit">SUBMIT</button>
+        </div>
+         
      </div>
  </fieldset>
  </form>
