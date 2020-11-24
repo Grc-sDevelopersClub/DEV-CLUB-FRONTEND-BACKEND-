@@ -4,3 +4,14 @@ iframe {
   margin-top: 20px;
   margin-bottom: 150px;
 }
+
+@media (max-width: 992px) { 
+
+  iframe {
+    height: 400px;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 150px;
+  }
+
+}

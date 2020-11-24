@@ -18,28 +18,28 @@
     }
 
     .big-heading {
-        font-size: 6.5rem;
+        font-size: 3.5rem;
     }
 
     .secondbig-heading {
-        font-size: 5.5rem;
+        font-size: 3.5rem;
     }
 
     p {
-        font-size: 2.8rem;
+        font-size: 1.8rem;
     }
 
     h3,h2 {
-        font-size: 4rem;
+        font-size: 2rem;
     }
 
     .navbar-toggler-icon {
-        width: 6rem;
-        height: 6rem;
+        width: 3rem;
+        height: 3rem;
     }
 
-    .header-button{
-        font-size: 2.8rem;
+    .header-button {
+        font-size: 3rem !important;
         border-top-left-radius:10px;
         border-bottom-left-radius: 10px;
         border-top-right-radius: 10px;
@@ -48,7 +48,7 @@
     }
 
     .navbar-brand {
-        font-size: 6.3rem;
+        font-size: 3rem;
     }
 
     .navbar-nav {
@@ -56,9 +56,20 @@
         text-align: left;
     }
 
+    .white-section {
+        padding: 5% 5%;
+    }
+
+    /* We Speak */
+
+    .language-item i {
+        font-size: 10rem !important;
+    }
+
     .welearn-section {
         text-align: center;
     }
+
 
     .container-fluid {
         padding: 3% 5% 7%;
@@ -71,6 +82,7 @@
 
     .secondbig-heading {
         text-align: center;
+        
     }
 
     .ourroles-image {
@@ -120,21 +132,25 @@
         font-size: 3rem;
     }
     .btn-social {
-        font-size: 3rem;
+        font-size: 2.2rem;
         margin: 20px 0;
+        /* padding: 5% 3%; */
     }
     .dropdown-item {
-        font-size: 2.8rem;
+        font-size: 2.2rem;
     }
     
     .register-login-heading {
-        font-size: 5.5rem;
+        font-size: 4.5rem;
     }
 
     .card {
-        margin: 10% 8%;
+        margin: 10% 0;
     } 
 
+    .card-body {
+        padding: 1.25rem 0;
+    }
     .unit-cards {
         margin: auto;
         margin-top: 8%;
@@ -155,4 +171,51 @@
         margin-top: 2%;
     }
    
+
+    /* OUR ROLE */
+
+    #ourroles p {
+        font-size: 1.2rem;
+    }
+
+
+    /* OUR TEAM */
+
+    .ourteam-item {
+        font-size: 2rem;
+    }
+    #ourteam-carousel img {
+        width: 40% !important;
+    }
+    #ourteam img {
+        width: 50%;
+    }
+
+    .btn-primary {
+        font-size: 2rem;
+        border-top-left-radius:5px;
+        border-bottom-left-radius: 5px;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+
+
+    
+    #ourteam-carousel h4 h3 {
+        font-size: 2rem;
+    }
+     
+    #ourteam-carousel h3 {
+        font-size: 2rem !important;
+    }
+    h6 {
+        font-size: 2.5rem;
+    }
+    #material-card {
+        margin: 5% 0;
+    }
+
+    .row {
+        margin-left: 0;
+    }
 }
