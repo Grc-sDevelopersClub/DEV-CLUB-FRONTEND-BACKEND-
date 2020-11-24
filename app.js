@@ -635,12 +635,12 @@ app.get("/files/:fileName", (req, res) => {
 //Viewing resources for specific branches.
 
 app.get("/resources", (req, res) => {
-  res.render("resources");
-  // if (req.isAuthenticated()) {
-  //   res.render("resources");
-  // } else {
-  //   res.redirect("/login");
-  // }
+  // res.render("resources");
+  if (req.isAuthenticated()) {
+    res.render("resources");
+  } else {
+    res.redirect("/login");
+  }
 });
 
 app.post("/resources", (req, res) => {
