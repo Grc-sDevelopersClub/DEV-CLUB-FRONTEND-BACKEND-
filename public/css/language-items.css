@@ -8,8 +8,9 @@
 .languages .language-item {
     margin: 0px 0.2em;
     flex: 1 1 20%;
-    font-size: 8rem;
-    height: 200px;
+    font-size: 6rem;
+    height: 100%;
+    padding: 6% 0;
     transition: .5s;
 }
 

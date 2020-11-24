@@ -557,12 +557,12 @@ app.post("/paynow", (req, res) => {
 
 //Route to store all files from the admins.
 app.get("/store", (req, res) => {
-  res.render("store",{message:req.flash("message")});
-  // if (req.isAuthenticated()&& req.user.systemAdmin===true) {
-  //   res.render("store",{message:req.flash("message")});
-  // } else {
-  //   res.redirect("/login");
-  // }
+  // res.render("store",{message:req.flash("message")});
+  if (req.isAuthenticated()&& req.user.systemAdmin===true) {
+    res.render("store",{message:req.flash("message")});
+  } else {
+    res.redirect("/login");
+  }
 });
 
 
@@ -635,12 +635,12 @@ app.get("/files/:fileName", (req, res) => {
 //Viewing resources for specific branches.
 
 app.get("/resources", (req, res) => {
-  res.render("resources");
-  // if (req.isAuthenticated()) {
-  //   res.render("resources");
-  // } else {
-  //   res.redirect("/login");
-  // }
+  // res.render("resources");
+  if (req.isAuthenticated()) {
+    res.render("resources");
+  } else {
+    res.redirect("/login");
+  }
 });
 
 app.post("/resources", (req, res) => {

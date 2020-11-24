@@ -62,18 +62,16 @@
     width: 100%;
 }
 
-.ourrole-row {
-    margin: 5rem 0;
-}
+
 
 .ourrole-item-right {
     text-align: right;
-    padding: 6% 0;
+    padding: 6% 5%;
 }
 
 .ourrole-item-left {
     text-align: left;
-    padding: 6% 0;
+    padding: 6% 5%;
 }
 
 .carousel-item {
@@ -137,9 +135,9 @@ hr {
     width: 70%;
 }
 
-.custom-card .card {
+/* .custom-card .card {
     align-items: center;
-}
+} */
 
 .card-header {
     align-items: stretch;
@@ -147,9 +145,10 @@ hr {
 
 .custom-card .row {
     align-items: center;
-    width: 600px;
+    /* width: 100%; */
 }
 
 .notFoundImage {
     width: 100%;
 }
+
