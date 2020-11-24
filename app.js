@@ -69,6 +69,7 @@ const mongoURI =
 const devclubDB = mongoose.connect(mongoURI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
+  useFindAndModify:false
 });
 
 const conn = mongoose.connection;
