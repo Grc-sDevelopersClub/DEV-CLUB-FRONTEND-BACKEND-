@@ -218,8 +218,5 @@
     .row {
         margin-left: 0;
     }
-    .dropdown-menu {
-       left: -60px !important;
-       /* width: 200% !important; */
-    }
+   
 }
