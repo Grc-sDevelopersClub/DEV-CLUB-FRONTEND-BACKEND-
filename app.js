@@ -249,23 +249,23 @@ app.get("/", (req, res) => {
 
 //route for handelling  online-compilers.
 
-let editorLang = "python";
-app.get("/online-compiler", (req, res) => {
-  if (req.isAuthenticated()) {
-    res.render("online-compiler", {
-      language: editorLang,
-    });
-  } else {
-    res.redirect("/login");
-  }
-});
+// let editorLang = "python";
+// app.get("/online-compiler", (req, res) => {
+//   if (req.isAuthenticated()) {
+//     res.render("online-compiler", {
+//       language: editorLang,
+//     });
+//   } else {
+//     res.redirect("/login");
+//   }
+// });
 
-app.post("/online-compiler", (req, res) => {
-  editorLang = req.body.Lang;
-  res.render("online-compiler", {
-    language: editorLang,
-  });
-});
+// app.post("/online-compiler", (req, res) => {
+//   editorLang = req.body.Lang;
+//   res.render("online-compiler", {
+//     language: editorLang,
+//   });
+// });
 
 
 
