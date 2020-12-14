@@ -93,27 +93,54 @@ conn.once("open", () => {
 
 //cretate storage engine tp store gridfs elements
 
-const storage = new GridFsStorage({
-  db: devclubDB,
-  file: (req, file) => {
-    return new Promise((resolve, reject) => {
-      crypto.randomBytes(16, (err, buf) => {
-        if (err) {
-          return reject(err);
-        }
-        const filename = buf.toString("hex") + path.extname(file.originalname);
-        const fileInfo = {
-          filename: filename,
-          bucketName: "uploads",
-        };
-        resolve(fileInfo);
-      });
-    });
+// const storage = new GridFsStorage({
+//   db: devclubDB,
+//   file: (req, file) => {
+//     return new Promise((resolve, reject) => {
+//       crypto.randomBytes(16, (err, buf) => {
+//         if (err) {
+//           return reject(err);
+//         }
+//         const filename = buf.toString("hex") + path.extname(file.originalname);
+//         const fileInfo = {
+//           filename: filename,
+//           bucketName: "uploads",
+//         };
+//         resolve(fileInfo);
+//       });
+//     });
+//   },
+// });
+
+// const upload = multer({ storage });
+
+
+
+
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, './public/uploads/')
   },
+  filename: function (req, file, cb) {
+      let ext = path.extname(file.originalname)
+    cb(null,Date.now() + ext)
+  }
 });
 
-const upload = multer({ storage });
-
+const upload = multer ({
+  storage: storage,
+  fileFilter: (req,file,callback)=>{
+      if(file.mimetype="application/pdf"){
+          callback(null,true);
+      }else{
+          console.log("Only PDF formats are allowed");
+          callback(null,false);
+      }
+  },
+  limits: {
+      fileSize: 10485760 
+  }
+})
 
 
 
@@ -607,27 +634,45 @@ app.get("/logout", (req, res) => {
 //Finding special file using filename
 
 app.get("/files/:fileName", (req, res) => {
-  gfs.find({ filename: req.params.fileName }).toArray((err, file) => {
-    //check if files exist
-    if (!file[0] || file.length === 0) {
-      return res.status(404).json({
-        success: false,
-        message: "No Files Available",
-      });
-    }
-    if (
-      file[0].contentType === "image/jpeg" ||
-      file[0].contentType === "application/pdf" ||
-      file[0].contentType === "image/jpg" ||
-      file[0].contentType === "image/png"
-    ) {
-      gfs.openDownloadStreamByName(req.params.fileName).pipe(res);
-    } else {
-      res.status(404).json({
-        err: "Not an Image",
-      });
-    }
-  });
+  File.find({fileName: req.params.fileName},(err,data)=>{  
+    if(err){  
+        console.log(err)  
+    }   
+    else{
+      // console.log(data);  
+       var path= __dirname+'/public/uploads/'+data[0].fileName;  
+       res.download(path);  
+    }  
+})  
+
+
+  //Code for storing in MOnogoDB using grid Fs.
+
+
+
+  // gfs.find({ filename: req.params.fileName }).toArray((err, file) => {
+  //   //check if files exist
+  //   if (!file[0] || file.length === 0) {
+  //     return res.status(404).json({
+  //       success: false,
+  //       message: "No Files Available",
+  //     });
+  //   }
+  //   if (
+  //     file[0].contentType === "image/jpeg" ||
+  //     file[0].contentType === "application/pdf" ||
+  //     file[0].contentType === "image/jpg" ||
+  //     file[0].contentType === "image/png"
+  //   ) {
+  //     gfs.openDownloadStreamByName(req.params.fileName).pipe(res);
+  //   } else {
+  //     res.status(404).json({
+  //       err: "Not an Image",
+  //     });
+  //   }
+  // });
+
+
 });
 
 
