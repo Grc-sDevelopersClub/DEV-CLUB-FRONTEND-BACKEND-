@@ -210,7 +210,7 @@ passport.use(
     {
       clientID: process.env.CLIENT_ID,
       clientSecret: process.env.CLIENT_SECRET,
-      callbackURL: "https://gentle-lowlands-90024.herokuapp.com/auth/google/secrets",
+      callbackURL: "http://localhost:3000/auth/google/secrets",
       userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo",
     },
     function (accessToken, refreshToken, profile, cb) {
@@ -239,7 +239,7 @@ passport.use(
     {
       clientID: process.env.FACEBOOK_APP_ID,
       clientSecret: process.env.FACEBOOK_APP_SECRET,
-      callbackURL: "https://gentle-lowlands-90024.herokuapp.com/auth/facebook/secrets",
+      callbackURL: "http://localhost:3000/auth/facebook/secrets",
       profileFields: ["id", "displayName", "photos", "email"],
     },
     function (accessToken, refreshToken, profile, cb) {
@@ -333,7 +333,8 @@ app.get(
 app.get(
   "/auth/google/secrets",
   passport.authenticate("google", {
-    failureRedirect: "/login",
+    failureRedirect: "/login"
+    // successRedirect: "/profile"
   }),
   function (req, res) {
     // Successful authentication, redirect home.
@@ -547,7 +548,7 @@ app.post("/paynow", (req, res) => {
     params["ORDER_ID"] = "TEST_" + new Date().getTime();
     params["CUST_ID"] = paymentDetails.customerId;
     params["TXN_AMOUNT"] = paymentDetails.amount;
-    params["CALLBACK_URL"] = "https://gentle-lowlands-90024.herokuapp.com/callback";
+    params["CALLBACK_URL"] = "http://localhost:3000/callback";
     params["EMAIL"] = paymentDetails.customerEmail;
     params["MOBILE_NO"] = paymentDetails.customerPhone;
 
