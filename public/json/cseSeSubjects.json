@@ -1,6 +1,6 @@
 [
     {"name": "Discrete Mathematics",  "code": "DM"},
-    {"name":  "Fundamentals of Data Structures", "code": "FDS"},
+    {"name":  "Computer Organisation and Architecture", "code": "COA"},
     {"name": "Object Oriented Programming(OOP)", "code": "OOP"},
     {"name": "Computer Graphics ", "code": "CG"},
     {"name": "Digital Electronics and Logic Design ", "code": "DELD"},
