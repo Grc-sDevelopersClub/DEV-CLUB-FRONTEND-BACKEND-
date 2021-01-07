@@ -210,7 +210,7 @@ passport.use(
     {
       clientID: process.env.CLIENT_ID,
       clientSecret: process.env.CLIENT_SECRET,
-      callbackURL: "http://gentle-lowlands-90024.herokuapp.com/herokuApp",
+      callbackURL: "http://gentle-lowlands-90024.herokuapp.com/auth/google/herokuApp",
       userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo",
     },
     function (accessToken, refreshToken, profile, cb) {
@@ -239,7 +239,7 @@ passport.use(
     {
       clientID: process.env.FACEBOOK_APP_ID,
       clientSecret: process.env.FACEBOOK_APP_SECRET,
-      callbackURL: "http://gentle-lowlands-90024.herokuapp.com/herokuApp",
+      callbackURL: "https://grcsdevelopersclub.tech/auth/facebook/secrets",
       profileFields: ["id", "displayName", "photos", "email"],
     },
     function (accessToken, refreshToken, profile, cb) {
