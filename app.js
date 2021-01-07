@@ -334,7 +334,7 @@ app.get(
 );
 
 app.get(
-  "/auth/google/secrets",
+  "/auth/google/herokuApp",
   passport.authenticate("google", {
     failureRedirect: "/login"
     // successRedirect: "/profile"
@@ -357,7 +357,7 @@ app.get(
 );
 
 app.get(
-  "/auth/facebook/secrets",
+  "/auth/facebook/herokuApp",
   passport.authenticate("facebook", {
     failureRedirect: "/login",
   }),
