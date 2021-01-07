@@ -239,7 +239,7 @@ passport.use(
     {
       clientID: process.env.FACEBOOK_APP_ID,
       clientSecret: process.env.FACEBOOK_APP_SECRET,
-      callbackURL: "https://grcsdevelopersclub.tech/auth/facebook/secrets",
+      callbackURL: "https://grcsdevelopersclub.tech/auth/facebook/herokuApp",
       profileFields: ["id", "displayName", "photos", "email"],
     },
     function (accessToken, refreshToken, profile, cb) {
