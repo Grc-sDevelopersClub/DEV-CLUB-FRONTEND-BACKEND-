@@ -210,7 +210,7 @@ passport.use(
     {
       clientID: process.env.CLIENT_ID,
       clientSecret: process.env.CLIENT_SECRET,
-      callbackURL: "http://localhost:3000/auth/google/secrets",
+      callbackURL: "http://gentle-lowlands-90024.herokuapp.com/herokuApp",
       userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo",
     },
     function (accessToken, refreshToken, profile, cb) {
@@ -239,7 +239,7 @@ passport.use(
     {
       clientID: process.env.FACEBOOK_APP_ID,
       clientSecret: process.env.FACEBOOK_APP_SECRET,
-      callbackURL: "http://localhost:3000/auth/facebook/secrets",
+      callbackURL: "http://gentle-lowlands-90024.herokuapp.com/herokuApp",
       profileFields: ["id", "displayName", "photos", "email"],
     },
     function (accessToken, refreshToken, profile, cb) {
@@ -273,6 +273,9 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
+app.get("/comingsoon",(req,res)=> {
+  res.render("comingsoon");
+});
 
 //route for handelling  online-compilers.
 
@@ -548,7 +551,7 @@ app.post("/paynow", (req, res) => {
     params["ORDER_ID"] = "TEST_" + new Date().getTime();
     params["CUST_ID"] = paymentDetails.customerId;
     params["TXN_AMOUNT"] = paymentDetails.amount;
-    params["CALLBACK_URL"] = "http://localhost:3000/callback";
+    params["CALLBACK_URL"] = "http://gentle-lowlands-90024.herokuapp.com/callback";
     params["EMAIL"] = paymentDetails.customerEmail;
     params["MOBILE_NO"] = paymentDetails.customerPhone;
 
@@ -682,12 +685,12 @@ app.get("/files/:fileName", (req, res) => {
 //Viewing resources for specific branches.
 
 app.get("/resources", (req, res) => {
-  // res.render("resources");
-  if (req.isAuthenticated()) {
-    res.render("resources");
-  } else {
-    res.redirect("/login");
-  }
+  res.render("resources");
+  // if (req.isAuthenticated()) {
+  //   res.render("resources");
+  // } else {
+  //   res.redirect("/login");
+  // }
 });
 
 app.post("/resources", (req, res) => {
