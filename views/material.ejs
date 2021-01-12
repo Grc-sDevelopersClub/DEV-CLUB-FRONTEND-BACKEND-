@@ -9,7 +9,7 @@
     <div class="col-lg-3 col-sm-6 mx-auto">
       <div id="material-card" class="resource-card">
         <div class="card-body">
-          <h5 class="card-title"><%=file.displayName%></h5>
+          <h5  id="card-title" class="card-title"><%=file.displayName%></h5>
       
           <% if(file.fileName.substr(-4) === ".PDF" || file.fileName.substr(-4) ===".pdf"){%>
           <i
@@ -23,7 +23,13 @@
             aria-hidden="true"
             style="font-size: 150px; color: red"
           ></i>
-          <% }%>
+          <% }else { %>
+            <i
+              class="fas fa-book card-img-top"
+              aria-hidden="true"
+              style="font-size: 150px; color: red"
+            ></i>
+            <% }%>
           <p class="card-text">
             <small class="text-muted">Last updated 3 mins ago</small>
           </p>

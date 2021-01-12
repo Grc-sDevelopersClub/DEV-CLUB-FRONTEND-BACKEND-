@@ -174,6 +174,7 @@ const fileSchema = new mongoose.Schema({
   subject: String,
   unit: Number,
   displayName: String,
+  uploadedBy:String
 });
 
 
@@ -589,12 +590,13 @@ app.post("/paynow", (req, res) => {
 
 //Route to store all files from the admins.
 app.get("/store", (req, res) => {
-  res.render("store",{message:req.flash("message")});
-  // if (req.isAuthenticated()&& req.user.systemAdmin===true) {
-  //   res.render("store",{message:req.flash("message")});
-  // } else {
-  //   res.redirect("/login");
-  // }
+ 
+  // res.render("store",{message:req.flash("message")});
+  if (req.isAuthenticated()&& req.user.systemAdmin===true) {
+    res.render("store",{message:req.flash("message"),username:req.user.username});
+  } else {
+    res.redirect("/login");
+  }
 });
 
 
@@ -611,6 +613,7 @@ app.post("/store", upload.single("file"), (req, res) => {
     subject: req.body.subject,
     unit: req.body.unit,
     displayName: req.body.displayName,
+    uploadedBy:req.body.userName,
     message: req.flash("message"),
   });
   file.save((err) => {
