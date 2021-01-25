@@ -1,4 +1,5 @@
 [
+    {"name": "--Select--", "code": ""},
     {"name": "Second year", "code": "MECHSE"},
     {"name": "Third Year", "code": "MECHTE"},
     {"name": "Final Year", "code": "MECHBE"}

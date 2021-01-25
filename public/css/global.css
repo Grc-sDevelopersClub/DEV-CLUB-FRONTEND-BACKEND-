@@ -89,3 +89,11 @@
          font-size: 1.8rem;
          line-height: 3.5rem;
      }
+
+     .box {
+        -o-text-overflow: ellipsis;   /* Opera */
+        text-overflow:    ellipsis;   /* IE, Safari (WebKit) */
+        overflow:hidden;              /* don't show excess chars */
+        white-space:nowrap;           /* force single line */
+        width: 130px;                 /* fixed width */
+    }

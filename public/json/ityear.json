@@ -1,4 +1,5 @@
 [
+    {"name": "--Select--", "code": ""},
     {"name": "Second year", "code": "ITSE"},
     {"name": "Third Year", "code": "ITTE"},
     {"name": "Final Year", "code": "ITBE"}

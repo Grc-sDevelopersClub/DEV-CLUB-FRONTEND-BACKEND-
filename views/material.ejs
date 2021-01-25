@@ -30,10 +30,11 @@
               style="font-size: 150px; color: red"
             ></i>
             <% }%>
-          <p class="card-text">
-            <small class="text-muted">Last updated 3 mins ago</small>
-          </p>
-      
+            <div class="box">
+              <p class="card-text">
+                <small class="text-muted"><i class="far fa-copyright"></i>2020 <%=file.uploadedBy %></small>
+              </p>
+            </div>  
           <a href="/files/<%=file.fileName%>" class="btn btn-danger" download>Download</a>
         </div>
       </div>
